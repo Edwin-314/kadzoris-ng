@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Apply — Kadzoris</title>
+<link rel="icon" type="image/jpeg" href="https://6a95c2fa3a1c560008b2f7f9--kadzoris.netlify.app/logo.jpg">
+<link rel="stylesheet" href="style.css">
+<style>
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:700px){.form-grid{grid-template-columns:1fr;}}
+  label{display:block;font-size:0.82rem;color:var(--ash);margin-bottom:6px;}
+  input,select,textarea{width:100%;background:var(--ink-2);border:1px solid var(--line);color:var(--paper);
+    border-radius:8px;padding:12px 14px;font-family:'Inter',sans-serif;font-size:0.92rem;margin-bottom:16px;}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brass);}
+  textarea{resize:vertical;min-height:100px;}
+  .contact-side .item{margin-bottom:24px;}
+  .contact-side .k{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--brass-bright);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+  .map-box{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;height:180px;display:flex;
+    align-items:center;justify-content:center;color:var(--ash);font-size:0.85rem;margin-top:24px;}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="https://6a95c2fa3a1c560008b2f7f9--kadzoris.netlify.app/logo.jpg" alt="Kadzoris logo"><span class="brand">Kadzoris<span>.</span></span></a>
+    <div class="navlinks"><a href="index.html">Home</a><a href="services.html">Solutions</a><a href="industries.html">Industries</a><a href="index.html#projects">Projects</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <a href="digital-gap-assessment.html" class="navcta" data-track="digital_gap_started">Find Your Digital Gap</a>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Home</a><a href="services.html">Solutions</a><a href="industries.html">Industries</a><a href="index.html#projects">Projects</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a><a href="digital-gap-assessment.html" class="navcta" data-track="digital_gap_started">Find Your Digital Gap</a></div>
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Consultation & initiative application</div>
+    <h1>Tell us where the business is getting stuck.</h1>
+    <p>Use this form to discuss a digital gap or apply for the 100 Nigerian Businesses Digital Transformation Initiative. We’ll use your context to recommend the right next step, not simply push a technology.</p>
+  </div>
+</section>
+<section id="consult">
+  <div class="wrap" style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;">
+    <div>
+      <form id="applyForm" onsubmit="handleApplyForm(event)">
+        <div class="form-grid">
+          <div><label>Organization Name</label><input type="text" name="organization" placeholder="e.g. Al-Noor Law Chambers" required></div>
+          <div><label>Contact Person</label><input type="text" name="contactPerson" placeholder="Your full name" required></div>
+          <div><label>Phone Number</label><input type="tel" name="phone" placeholder="+234" required></div>
+          <div><label>Email Address</label><input type="email" name="email" placeholder="you@organization.com"></div>
+          <div><label>Industry</label><select name="industry"><option>School</option><option>Hospital / Clinic</option><option>Hotel</option><option>Restaurant</option><option>Church</option><option>Mosque</option><option>NGO</option><option>Law Firm</option><option>Real Estate</option><option>Construction</option><option>Logistics</option><option>Manufacturing</option><option>Retail</option><option>Other</option></select></div>
+          <div><label>Service Needed</label><select name="serviceNeeded"><option>Business Website</option><option>Web / Mobile App</option><option>AI Automation</option><option>Business Management System</option><option>Not sure yet</option></select></div>
+        </div>
+        <label>Current Website (if any)</label><input type="text" name="currentWebsite" placeholder="https://">
+        <label>Message</label><textarea name="message" placeholder="Tell us a bit about your organization and what you're hoping to achieve online."></textarea>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;">
+          <button type="submit" class="btn-primary" style="border:none;cursor:pointer;">Send Enquiry / Application →</button>
+          <a href="https://wa.me/2347071594483?text=Hi%2C%20I%27d%20like%20to%20make%20further%20inquiries." class="btn-secondary" style="border:1px solid var(--line);background:transparent;">Further Inquiries</a>
+        </div>
+        <p id="applyStatus" style="margin-top:14px;font-size:0.88rem;min-height:1.2em;"></p>
+      </form>
+    </div>
+    <div class="contact-side">
+      <div class="item"><div class="k">Phone</div><div>+234 (0) 707 159 4483</div></div>
+      <div class="item"><div class="k">Email</div><div>hello@kadzoris.ng</div></div>
+      <div class="item"><div class="k">Office Hours</div><div>Mon – Fri, 9:00am – 5:00pm WAT</div></div>
+      <div class="item"><div class="k">Social</div><div>Instagram · WhatsApp · LinkedIn</div></div>
+      <div class="item"><div class="k">Address</div><div>House 3B, B Close, 3rd Avenue,<br>Gonin Gora, Kaduna</div></div>
+      <div class="map-box" style="flex-direction:column;gap:10px;"><span>Prefer to talk first?</span><a href="https://wa.me/2347071594483" class="btn-secondary" style="padding:10px 20px;font-size:0.85rem;">Chat on WhatsApp →</a></div>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap"><p>Kadzoris — AI-Powered Digital Solutions for Nigerian Businesses</p><div class="flinks"><a href="services.html">Solutions</a><a href="industries.html">Industries</a><a href="digital-gap-assessment.html">Digital Gap Assessment</a><a href="contact.html">Contact</a></div><p>© 2026 Kadzoris. All rights reserved.</p></div></footer>
+<a href="https://wa.me/2347071594483" class="wa-float" aria-label="WhatsApp Kadzoris" data-track="whatsapp_clicked">◆</a>
+<script src="script.js"></script>
+</body>
+</html>
