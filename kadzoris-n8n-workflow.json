@@ -1,0 +1,82 @@
+{
+  "name": "Kadzoris - Website Application Intake",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "kadzoris-apply",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "1a1a1a1a-0001-4000-8000-000000000001",
+      "name": "Webhook - Apply Form",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [260, 300],
+      "webhookId": "kadzoris-apply"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.resend.com/emails",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"from\": \"Kadzoris Applications <applications@kadzoris.ng>\",\n  \"to\": [\"hello@kadzoris.ng\"],\n  \"reply_to\": \"{{$json.body.email || 'hello@kadzoris.ng'}}\",\n  \"subject\": \"New Application: {{$json.body.organization}}\",\n  \"text\": \"New website application received from kadzoris.ng\\n\\nOrganization: {{$json.body.organization}}\\nContact Person: {{$json.body.contactPerson}}\\nPhone: {{$json.body.phone}}\\nEmail: {{$json.body.email}}\\nIndustry: {{$json.body.industry}}\\nService Needed: {{$json.body.serviceNeeded}}\\nCurrent Website: {{$json.body.currentWebsite}}\\n\\nMessage:\\n{{$json.body.message}}\\n\\nSubmitted at: {{$json.body.submittedAt}}\\nSource: {{$json.body.source}}\"\n}",
+        "options": {}
+      },
+      "id": "1a1a1a1a-0002-4000-8000-000000000002",
+      "name": "Send Email via Resend",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [520, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REPLACE_WITH_YOUR_RESEND_CREDENTIAL_ID",
+          "name": "Resend API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"message\": \"Application received\"\n}",
+        "options": {}
+      },
+      "id": "1a1a1a1a-0003-4000-8000-000000000003",
+      "name": "Respond to Website",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [780, 300]
+    }
+  ],
+  "connections": {
+    "Webhook - Apply Form": {
+      "main": [
+        [
+          {
+            "node": "Send Email via Resend",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email via Resend": {
+      "main": [
+        [
+          {
+            "node": "Respond to Website",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
