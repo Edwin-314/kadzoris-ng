@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Avenor Grand Hotel | Where Modernity Meets Serenity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#30312e",
+                        "surface": "#fbf9f4",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#eae8e3",
+                        "on-tertiary-fixed": "#27171a",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "surface-bright": "#fbf9f4",
+                        "secondary": "#775a19",
+                        "on-primary-fixed": "#131e15",
+                        "surface-dim": "#dbdad5",
+                        "surface-container-highest": "#e4e2dd",
+                        "inverse-primary": "#bccabc",
+                        "outline-variant": "#c4c8c1",
+                        "secondary-container": "#fed488",
+                        "on-primary-fixed-variant": "#3d4a3f",
+                        "tertiary": "#2d1c1f",
+                        "on-surface": "#1b1c19",
+                        "inverse-on-surface": "#f2f1ec",
+                        "primary-container": "#2d392f",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#e9c176",
+                        "primary-fixed-dim": "#bccabc",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#d8e6d8",
+                        "on-secondary-container": "#785a1a",
+                        "surface-container": "#f0eee9",
+                        "on-secondary": "#ffffff",
+                        "primary": "#18231a",
+                        "secondary-fixed": "#ffdea5",
+                        "on-tertiary-fixed-variant": "#564145",
+                        "tertiary-fixed": "#f9dbdf",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#556256",
+                        "on-surface-variant": "#434843",
+                        "tertiary-fixed-dim": "#dcc0c3",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1c19",
+                        "tertiary-container": "#443134",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#b3989c",
+                        "surface-variant": "#e4e2dd",
+                        "outline": "#747873",
+                        "on-primary-container": "#95a395",
+                        "background": "#fbf9f4",
+                        "on-secondary-fixed": "#261900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "section-gap": "120px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "80px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        #mobileNav{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+        #mobileNav.open{max-height:400px;}
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+
+<div class="bg-black text-white text-xs md:text-sm py-2 px-4 flex flex-col md:flex-row justify-between items-center gap-1">
+  <a href="demo.html" class="text-secondary-fixed font-medium">← Back to Demos</a>
+  <span class="text-white/50">Sample project — illustrative demo, not an actual client</span>
+</div>
+
+<!-- Top Navigation Bar -->
+<nav class="fixed top-8 md:top-9 w-full z-50 bg-transparent backdrop-blur-sm border-b border-outline-variant/20 h-20 transition-all duration-500" id="navbar">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-full">
+<a class="font-display-lg text-headline-md tracking-tighter text-primary" href="#">AVENOR</a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#rooms">Rooms</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#amenities">Amenities</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#gallery">Gallery</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#booking">Booking</a>
+<a href="https://wa.me/2347071594483?text=Hi%2C%20I%27d%20like%20to%20reserve%20a%20room%20at%20Avenor%20Grand%20Hotel." class="ml-stack-lg bg-primary text-on-primary px-8 py-3 rounded-lg font-label-md text-label-md uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all inline-block">
+                    Reserve Now
+                </a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary" id="mobileNavToggle" aria-label="Toggle menu">
+<span class="material-symbols-outlined text-[32px]">menu</span>
+</button>
+</div>
+<div id="mobileNav" class="md:hidden bg-white border-t border-outline-variant/20">
+<div class="flex flex-col px-margin-mobile py-4 gap-4">
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant" href="#rooms">Rooms</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant" href="#amenities">Amenities</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant" href="#gallery">Gallery</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant" href="#booking">Booking</a>
+<a href="https://wa.me/2347071594483?text=Hi%2C%20I%27d%20like%20to%20reserve%20a%20room%20at%20Avenor%20Grand%20Hotel." class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-center">Reserve Now</a>
+</div>
+</div>
+</nav>
+
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-[10000ms] hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAodBy7Bf6MWBSUu6us_JqhO1IYs8ecDubBJyK1DWYhrf_6W8ailbl6Y9QLzRQz95N9mr6FVEcUdef-I-XIkXx0O78ehbt87eIbLljLqGUP0DRVHU5WG40cJhork5M6NQ48fpZBsz6xiRFBiGygcVi8YAqCVjKR5O6wQ6Sy8rGKlBaSmrfIfccfVMh66mbSutdP0WVWDyEVN9yiQtP2BD7uGi_1y3m_A1DNV2-9eFJtTeSItjx0MXgVgWaencGxmwcgy47vx7oFPmTY')">
+</div>
+<div class="absolute inset-0 bg-black/40"></div>
+</div>
+<div class="relative z-10 text-center text-on-primary px-margin-mobile">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-stack-md text-shadow-sm">
+                    Where Modernity Meets Serenity
+                </h1>
+<p class="font-body-lg text-body-lg max-w-2xl mx-auto mb-stack-lg opacity-90">
+                    Luxury reimagined in the heart of Abuja — refined comfort, exceptional hospitality, and effortless business travel.
+                </p>
+<a class="inline-block bg-white text-primary px-10 py-4 rounded-lg font-label-md text-label-md uppercase tracking-widest hover:bg-surface transition-colors shadow-lg" href="#rooms">
+                    Explore the Collection
+                </a>
+</div>
+<!-- Booking Bar -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 w-full max-w-container-max px-margin-mobile z-20" id="booking">
+<div class="glass-panel p-stack-md md:p-stack-lg shadow-2xl rounded-xl border border-outline-variant/30 flex flex-col md:flex-row gap-6 items-center justify-between">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full md:flex-1">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">Check-in</span>
+<div class="flex items-center gap-2 border-b border-outline-variant pb-1">
+<span class="material-symbols-outlined text-secondary">calendar_today</span>
+<span class="font-body-md text-primary">Select date</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">Check-out</span>
+<div class="flex items-center gap-2 border-b border-outline-variant pb-1">
+<span class="material-symbols-outlined text-secondary">calendar_today</span>
+<span class="font-body-md text-primary">Select date</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">Guests</span>
+<div class="flex items-center gap-2 border-b border-outline-variant pb-1">
+<span class="material-symbols-outlined text-secondary">person</span>
+<span class="font-body-md text-primary">2 Adults</span>
+</div>
+</div>
+</div>
+<a href="https://wa.me/2347071594483?text=Hi%2C%20I%27d%20like%20to%20check%20availability%20at%20Avenor%20Grand%20Hotel." class="w-full md:w-auto bg-primary text-on-primary px-12 py-4 rounded-lg font-label-md text-label-md uppercase tracking-widest hover:opacity-90 transition-opacity text-center inline-block">
+                        Check Availability
+                    </a>
+</div>
+</div>
+</section>
+
+<!-- Rooms Showcase -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="rooms">
+<div class="text-center mb-stack-lg max-w-3xl mx-auto">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-[0.2em] mb-4 block">Exquisite Sanctuaries</span>
+<h2 class="font-headline-lg text-headline-lg mb-stack-md text-primary">Rooms &amp; Suites</h2>
+<p class="text-on-surface-variant font-body-md">Designed as a private haven, each room at Avenor combines organic textures with modern technology to ensure a stay of effortless comfort.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Deluxe Room -->
+<div class="group flex flex-col bg-surface-container-lowest border border-outline-variant hover:border-secondary/30 transition-all duration-500 rounded-lg overflow-hidden">
+<div class="relative h-[400px] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWn4RqpE4YkhN_eM1ZntsBR0XImz8OYf_cGb2fn5roxyiZQg0YoWdjZgPrhEvdq5jO3R26bTYvoBnOZqZW4ozNnOu_EplTwJLWFukHKIUdE8nF8XWXhySRnnuTxrqg-pc74_eCSuQvZAg94xwlMt0M7xNBe8QHcOP4KTLE-ofRmXPwrcPI5k9sbPP2BetPIUR05ovOC38svBm29wa5WOAq2jqI_bnpGzvI_2LtoCkCsaxkVQLcu7EYfsroidpCmRMqcJw7iyV6_2mi');">
+</div>
+<div class="absolute top-4 right-4">
+<span class="bg-white/80 backdrop-blur px-4 py-1 font-label-md text-label-md rounded-full text-primary">From ₦180,000/nt</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-1">
+<h3 class="font-headline-md text-headline-md mb-2 text-primary">Deluxe Room</h3>
+<p class="text-on-surface-variant mb-6 font-body-md flex-1">Comfortable, well-appointed, and ideal for both short stays and business travel.</p>
+<div class="flex gap-4 mb-8">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">king_bed</span> <span class="text-xs uppercase tracking-tighter">King Bed</span></div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">square_foot</span> <span class="text-xs uppercase tracking-tighter">32 m²</span></div>
+</div>
+<a class="border-b border-primary self-start pb-1 font-label-md text-label-md text-primary uppercase tracking-widest hover:text-secondary hover:border-secondary transition-colors" href="https://wa.me/2347071594483?text=Hi%2C%20I%27d%20like%20more%20details%20on%20the%20Deluxe%20Room.">View Details</a>
+</div>
+</div>
+<!-- Executive Room -->
+<div class="group flex flex-col bg-surface-container-lowest border border-outline-variant hover:border-secondary/30 transition-all duration-500 rounded-lg overflow-hidden">
+<div class="relative h-[400px] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnRTGbakN1NlkLO5__BJbob7JSLko3qra_dw9wK26lozmO6jX0caWGe99nJZwhaQILCdQSsgEq4CRL8iI68XO7h1aNi5MgnTTpoRb0jn9yHCi3oH5OaIVcHJ_p0Gkz49yqaERfNw5ctLeDkPRi4-0lu18_FXGkyme7Ic5p8RwjM8LQIcwtysL965L7gxwZrnYHVeXanp6mdEfXfSXTBM61ZrRty4mJaQlMAl68UtONLa-CCliMCsy6Xacj_mL32GV2E45FUMdUsMUA');">
+</div>
+<div class="absolute top-4 right-4">
+<span class="bg-white/80 backdrop-blur px-4 py-1 font-label-md text-label-md rounded-full text-primary">From ₦260,000/nt</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-1">
+<h3 class="font-headline-md text-headline-md mb-2 text-primary">Executive Room</h3>
+<p class="text-on-surface-variant mb-6 font-body-md flex-1">Designed for the business traveler, with a dedicated work area and skyline views.</p>
+<div class="flex gap-4 mb-8">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">work</span> <span class="text-xs uppercase tracking-tighter">Work Desk</span></div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">square_foot</span> <span class="text-xs uppercase tracking-tighter">45 m²</span></div>
+</div>
+<a class="border-b border-primary self-start pb-1 font-label-md text-label-md text-primary uppercase tracking-widest hover:text-secondary hover:border-secondary transition-colors" href="https://wa.me/2347071594483?text=Hi%2C%20I%27d%20like%20more%20details%20on%20the%20Executive%20Room.">View Details</a>
+</div>
+</div>
+<!-- Luxury Suite -->
+<div class="group flex flex-col bg-surface-container-lowest border border-outline-variant hover:border-secondary/30 transition-all duration-500 rounded-lg overflow-hidden">
+<div class="relative h-[400px] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNmhr8y9Qj_Vj_TI_M5ZAuFSrcrsAmtlcn1PeBher1W_uEXUZEWnkumU1Xzvj3TO5qd-7cgik8gwlNXDNzaD4DJk9GOE96tN1dxqA9uISSifZVGwgY6Zz628vESKQk68Ah0CnFg0roZeJz2HoduMLzHqFaVHfUSwJTTqtvxPufUuXtS1xuQ02UTJOVUduwwejlXXVxRSC8sFKMFnNw0ODHg7TE6SrJ2kbFCyYkRnh7mD7Qn0eaZOUk177B3HVSiz5A6jArQi3oMHYK');">
+</div>
+<div class="absolute top-4 right-4">
+<span class="bg-white/80 backdrop-blur px-4 py-1 font-label-md text-label-md rounded-full text-primary">From ₦450,000/nt</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-1">
+<h3 class="font-headline-md text-headline-md mb-2 text-primary">Luxury Suite</h3>
+<p class="text-on-surface-variant mb-6 font-body-md flex-1">Our crown jewel — expansive living space with premium finishes and dedicated concierge service.</p>
+<div class="flex gap-4 mb-8">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">living</span> <span class="text-xs uppercase tracking-tighter">Living Area</span></div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">square_foot</span> <span class="text-xs uppercase tracking-tighter">80 m²</span></div>
+</div>
+<a class="border-b border-primary self-start pb-1 font-label-md text-label-md text-primary uppercase tracking-widest hover:text-secondary hover:border-secondary transition-colors" href="https://wa.me/2347071594483?text=Hi%2C%20I%27d%20like%20more%20details%20on%20the%20Luxury%20Suite.">View Details</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Refined Experiences (Amenities) -->
+<section class="bg-surface-container-low py-section-gap" id="amenities">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-[0.2em] mb-4 block">Art of Living</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Refined Experiences</h2>
+</div>
+<p class="text-on-surface-variant max-w-sm font-body-md">We provide more than just a stay; we offer a collection of moments designed to rejuvenate your senses.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter" id="gallery">
+<!-- Spa -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden mb-6 rounded-lg">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdGcKkxbIs6geUShdRRawU-Yf73n9UbpE6LkAafByuEzkgZUrI99YnHMMdYNvuCEbg03H98iw3Hvf5XT0lRvD60b1rUlnhk7rJGVSG3MWTtxUD1b-F_XNpjF718eTiRPBnmdrHkn5Mu_vDmipRsU8IvEwTAg_x7dMWRidTkCKyMusc36QLOqJGwccFZHTqOV5f48etpyrgP-gz7Z1FAq75x2TaGqgsA1Y1qjfMb9cbK72v-YxOrGqR0Q-mYjPUFOkHvTEpzMpvI4Wh');">
+</div>
+</div>
+<div class="flex items-center gap-4 mb-2">
+<span class="material-symbols-outlined text-secondary text-[32px]">spa</span>
+<h4 class="font-headline-md text-headline-md text-primary">The Sanctuary Spa</h4>
+</div>
+<p class="text-on-surface-variant font-body-md pl-12">Holistic treatments inspired by modern wellness science, in a calm, private setting.</p>
+</div>
+<!-- Fine Dining -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden mb-6 rounded-lg">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1riwXyNawvGjGs16IeNZu6G0Wy-lQ9t58IY0YYOqTW6yeq4NLXJJfhmxg6cU0izLa_oMnS77gYkgnQhO3VtWa12Xk9Vow9FJAB2NndxjouSI7nDdSN8MyKSLG3bRev6y3uEfX_HxnjI9oV36GzRUhJqvev5xadO-btpTY_41qxtKlyJAJR8lgerVOYE_vP-D0oaG2G-M9vKjNueLGtbbSsByhgjvXxgR4Um89UsL5dAreBBfuNuxTKme_ZDpUNAo6YOcyoG58_k-8');">
+</div>
+</div>
+<div class="flex items-center gap-4 mb-2">
+<span class="material-symbols-outlined text-secondary text-[32px]">restaurant</span>
+<h4 class="font-headline-md text-headline-md text-primary">L'Aube Dining</h4>
+</div>
+<p class="text-on-surface-variant font-body-md pl-12">Fine dining bringing together local flavours and international cuisine.</p>
+</div>
+<!-- Concierge -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden mb-6 rounded-lg">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAktWtFq5r_AEje96Cy4XH7t-a6uiQsT-UuO7PFUruCN3jluMQMX6jMDu-AQHPVeMdMKZO-0mO5PFlAhMqzxk-GTLxETSJy8XcEQuqJW3-9LFcZCuyaOlzsG2tK5LJZAERHdwIY819QmzrhcdVRDoK9C_qoEm67ntykn5hOowC-cM86W053VXTI9B_5QjGkbf4RCFeqDo7uobZ8R5KLer74xl4fdt2UeMG_qjlWJVjvwg8fq_g6ecV_KMPkFp0thDOSaxNPatIW-TTj');">
+</div>
+</div>
+<div class="flex items-center gap-4 mb-2">
+<span class="material-symbols-outlined text-secondary text-[32px]">concierge</span>
+<h4 class="font-headline-md text-headline-md text-primary">Private Concierge</h4>
+</div>
+<p class="text-on-surface-variant font-body-md pl-12">Your personal gateway to the city's best-kept secrets, available 24/7 for any request.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="py-section-gap bg-surface-container-lowest overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative">
+<div class="absolute -left-10 top-0 opacity-5 select-none pointer-events-none">
+<span class="font-display-lg text-[300px] leading-none">"</span>
+</div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<span class="block text-xs uppercase tracking-widest text-on-surface-variant mb-4">Illustrative sample quote for demonstration purposes</span>
+<blockquote class="font-display-lg text-headline-lg md:text-[48px] leading-snug text-primary italic mb-stack-lg">
+                        "Avenor isn't just a hotel; it's a shift in perspective. The quiet here has a texture, and the comfort feels earned, not shouted."
+                    </blockquote>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-[1px] bg-secondary mb-2"></div>
+<cite class="font-label-md text-label-md uppercase tracking-[0.3em] not-italic text-on-surface">Sample Guest</cite>
+<span class="text-on-surface-variant text-xs uppercase tracking-widest">Business Traveler</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Final Invitation (CTA) -->
+<section class="relative py-section-gap overflow-hidden bg-primary text-on-primary">
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<span class="font-label-md text-label-md text-secondary-fixed uppercase tracking-[0.3em] mb-stack-md block">Awaited Arrivals</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-stack-lg">The Final Invitation</h2>
+<p class="font-body-lg text-body-lg max-w-2xl mx-auto mb-stack-lg opacity-80">
+                    Your stay is ready. Secure your preferred dates at Avenor Grand Hotel and experience effortless comfort.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+<a href="https://wa.me/2347071594483?text=Hi%2C%20I%27d%20like%20to%20book%20a%20stay%20at%20Avenor%20Grand%20Hotel." class="bg-white text-primary px-12 py-5 rounded-lg font-label-md text-label-md uppercase tracking-widest hover:bg-surface transition-all active:scale-95 shadow-xl inline-block">
+                        Book Your Stay
+                    </a>
+<a href="https://wa.me/2347071594483?text=Hi%2C%20I%27d%20like%20to%20speak%20to%20the%20inquiry%20center." class="border border-white/30 text-white px-12 py-5 rounded-lg font-label-md text-label-md uppercase tracking-widest hover:bg-white/10 transition-all inline-block">
+                        Inquiry Center
+                    </a>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<a class="font-display-lg text-headline-md text-primary mb-6 block" href="#">AVENOR</a>
+<p class="text-on-surface-variant font-body-md pr-8">Avenor Grand Hotel — effortless luxury in the heart of Abuja.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-md text-label-md uppercase tracking-widest text-primary mb-2">Explore</h5>
+<a class="text-on-surface-variant hover:text-primary font-body-md transition-colors" href="#rooms">Rooms &amp; Suites</a>
+<a class="text-on-surface-variant hover:text-primary font-body-md transition-colors" href="#amenities">Amenities</a>
+<a class="text-on-surface-variant hover:text-primary font-body-md transition-colors" href="#gallery">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary font-body-md transition-colors" href="#booking">Booking</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-md text-label-md uppercase tracking-widest text-primary mb-2">Contact</h5>
+<a class="text-on-surface-variant hover:text-primary font-body-md transition-colors" href="https://wa.me/2347071594483">WhatsApp Us</a>
+<span class="text-on-surface-variant font-body-md">+234 (0) 707 159 4483</span>
+<span class="text-on-surface-variant font-body-md">hello@kadzoris.ng</span>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-md text-label-md uppercase tracking-widest text-primary mb-2">Legal</h5>
+<a class="text-on-surface-variant hover:text-primary font-body-md transition-colors" href="index.html">Kadzoris Home</a>
+<a class="text-on-surface-variant hover:text-primary font-body-md transition-colors" href="index.html">Want a site like this? Apply free →</a>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-16 pt-8 border-t border-outline-variant/10 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">Avenor Grand Hotel — a sample site built on the Kadzoris platform.</p>
+</div>
+</footer>
+
+<script>
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/95', 'shadow-md');
+                nav.classList.remove('bg-transparent');
+            } else {
+                nav.classList.remove('bg-white/95', 'shadow-md');
+                nav.classList.add('bg-transparent');
+            }
+        });
+
+        // Mobile nav toggle
+        const mobileToggle = document.getElementById('mobileNavToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        if (mobileToggle && mobileNav) {
+            mobileToggle.addEventListener('click', () => {
+                mobileNav.classList.toggle('open');
+            });
+            mobileNav.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => mobileNav.classList.remove('open'));
+            });
+        }
+
+        // Simple reveal animation observer
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('main > section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
