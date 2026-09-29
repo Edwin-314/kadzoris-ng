@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NorthCare Clinic | World-Class Healthcare in Nigeria</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .pattern-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23004d40' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        #mobileMenu{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+        #mobileMenu.open{max-height:400px;}
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#27308a",
+                    "on-secondary-fixed-variant": "#343d96",
+                    "tertiary": "#511e00",
+                    "surface-bright": "#f9f9f9",
+                    "surface": "#f9f9f9",
+                    "surface-variant": "#e2e2e2",
+                    "on-tertiary-fixed-variant": "#7a3000",
+                    "background": "#f9f9f9",
+                    "on-background": "#1a1c1c",
+                    "on-secondary-fixed": "#000767",
+                    "primary-fixed": "#afefdd",
+                    "on-surface": "#1a1c1c",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#7ebdac",
+                    "secondary-container": "#959efd",
+                    "inverse-primary": "#94d3c1",
+                    "secondary-fixed": "#e0e0ff",
+                    "primary-fixed-dim": "#94d3c1",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#065043",
+                    "primary": "#00342b",
+                    "outline": "#707975",
+                    "surface-dim": "#dadada",
+                    "on-surface-variant": "#3f4945",
+                    "outline-variant": "#bfc9c4",
+                    "tertiary-container": "#742e00",
+                    "on-tertiary-container": "#ff955e",
+                    "secondary": "#4c56af",
+                    "surface-container": "#eeeeee",
+                    "primary-container": "#004d40",
+                    "inverse-surface": "#2f3131",
+                    "on-primary-fixed": "#00201a",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#341100",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#ffdbcb",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-tint": "#29695b",
+                    "secondary-fixed-dim": "#bdc2ff",
+                    "tertiary-fixed-dim": "#ffb692"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "unit": "4px",
+                    "lg": "24px",
+                    "xxl": "64px",
+                    "gutter": "24px",
+                    "xl": "40px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "caption": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+
+<div class="bg-black text-white text-xs md:text-sm py-2 px-4 flex flex-col md:flex-row justify-between items-center gap-1">
+  <a href="demo.html" class="text-primary-fixed font-medium">← Back to Demos</a>
+  <span class="text-white/50">Sample project — illustrative demo, not an actual client</span>
+</div>
+
+<!-- Header (TopNavBar) -->
+<header class="full-width sticky top-0 z-50 bg-surface/95 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-gutter max-w-container-max mx-auto w-full h-20">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-primary">NorthCare Clinic</span>
+</div>
+<nav class="hidden md:flex items-center gap-xl">
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all duration-300" href="#services">Services</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all duration-300" href="#specialists">Specialists</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all duration-300" href="#testimonials">Testimonials</a>
+</nav>
+<div class="flex items-center gap-md">
+<a class="hidden lg:block px-md py-sm bg-tertiary-container text-on-tertiary-container font-label-md rounded-lg active:scale-95 transition-all" href="tel:+2347071594483">
+                    Emergency: Call Now
+                </a>
+<a class="px-md py-sm bg-primary text-on-primary font-label-md rounded-lg shadow-md hover:bg-primary-container transition-all active:scale-95" href="#appointment">
+                    Book Appointment
+                </a>
+<button class="md:hidden text-primary" id="mobileMenuToggle" aria-label="Toggle menu">
+<span class="material-symbols-outlined text-[32px]">menu</span>
+</button>
+</div>
+</div>
+<div id="mobileMenu" class="md:hidden bg-white border-t border-outline-variant">
+<div class="flex flex-col px-gutter py-4 gap-4">
+<a class="text-on-surface font-bold" href="#services">Services</a>
+<a class="text-on-surface font-bold" href="#specialists">Specialists</a>
+<a class="text-on-surface font-bold" href="#testimonials">Testimonials</a>
+<a class="bg-primary text-on-primary px-md py-sm rounded-lg text-center font-bold" href="#appointment">Book Appointment</a>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-xxl pb-xl md:pt-xxl md:pb-xxl pattern-overlay">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div class="z-10 text-center lg:text-left">
+<span class="inline-flex items-center gap-xs px-md py-xs bg-primary-fixed text-on-primary-fixed-variant rounded-full font-label-md mb-md">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                        NHIS Accredited Facility
+                    </span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-md leading-tight">
+                        World-Class Healthcare, <br/><span class="text-secondary">Home-Grown Excellence.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto lg:mx-0 mb-xl">
+                        Leading-edge medical diagnostics and compassionate care in the heart of Lagos. Bringing global standards to our local community.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-md justify-center lg:justify-start">
+<a class="px-xl py-md bg-primary text-on-primary font-headline-sm rounded-xl text-center shadow-lg hover:shadow-primary/20 transition-all active:scale-[0.98]" href="#appointment">
+                            Book Appointment
+                        </a>
+<a class="px-xl py-md border-2 border-primary text-primary font-headline-sm rounded-xl text-center hover:bg-primary/5 transition-all active:scale-[0.98]" href="#services">
+                            View Services
+                        </a>
+</div>
+</div>
+<div class="relative">
+<div class="relative rounded-xxl overflow-hidden shadow-2xl rotate-1">
+<img class="w-full h-auto object-cover rounded-xxl" alt="A professional group of smiling Nigerian doctors and nurses standing in a brightly lit, modern medical lobby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtRplEk0gwWR6bKXwCyNTjpjOVTwh3agDcNR3-64_NoIxprz-YaRWgc4flzh-Vwf37QP_tsNmrsAuu8hZdJtUjcx9gPLVd9Kuzo8_0SvPNFoZ9O9R41iUmhtjWU2-oP04YV3C36z2kZ7qyM28CEEYKdpUa5htNEpBJTAvBvfMGawUTd61FJ7y3EcTxxUNfJ-RNNc-wfSS9hN0bPvc5E1MGQevNejRlI5vZTl7QcOY3uzuxOJPRtd95PrF3KCCXEvXoWnsRRDuNeeGy"/>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -bottom-8 -left-8 glass-card p-lg rounded-xl shadow-xl hidden md:flex items-center gap-md border border-white/40">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="font-label-md text-primary font-bold">Quick Triage</p>
+<p class="text-caption text-on-surface-variant">Average &lt; 15min wait</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Bar -->
+<section class="bg-primary py-lg">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-lg items-center text-center">
+<div class="flex flex-col gap-xs border-r border-primary-container last:border-none">
+<span class="font-display-lg-mobile text-on-primary font-bold">25+</span>
+<span class="text-label-md text-primary-fixed/80">Specialists</span>
+</div>
+<div class="flex flex-col gap-xs md:border-r border-primary-container last:border-none">
+<span class="font-display-lg-mobile text-on-primary font-bold">10k+</span>
+<span class="text-label-md text-primary-fixed/80">Patients Served</span>
+</div>
+<div class="flex flex-col gap-xs border-r border-primary-container last:border-none">
+<span class="font-display-lg-mobile text-on-primary font-bold">24/7</span>
+<span class="text-label-md text-primary-fixed/80">Emergency Care</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-display-lg-mobile text-on-primary font-bold">NHIS</span>
+<span class="text-label-md text-primary-fixed/80">Accredited</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-xxl bg-surface-container-lowest" id="services">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-xxl">
+<h2 class="font-display-lg-mobile text-primary mb-sm">Our Clinical Centers</h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Providing a comprehensive range of specialized medical services with precision and care.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+<!-- Service 1 -->
+<div class="group p-lg bg-surface border border-outline-variant rounded-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-md group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">child_care</span>
+</div>
+<h3 class="font-headline-sm text-primary mb-sm">Maternity &amp; Neonatal</h3>
+<p class="text-body-md text-on-surface-variant mb-md">Exceptional care for mothers and newborns in our state-of-the-art birthing suites.</p>
+</div>
+<!-- Service 2 -->
+<div class="group p-lg bg-surface border border-outline-variant rounded-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-md group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">cardiology</span>
+</div>
+<h3 class="font-headline-sm text-primary mb-sm">Cardiology</h3>
+<p class="text-body-md text-on-surface-variant mb-md">Comprehensive heart health including echo, ECG, and non-invasive cardiovascular procedures.</p>
+</div>
+<!-- Service 3 -->
+<div class="group p-lg bg-surface border border-outline-variant rounded-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-md group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">biotech</span>
+</div>
+<h3 class="font-headline-sm text-primary mb-sm">Diagnostic Imaging</h3>
+<p class="text-body-md text-on-surface-variant mb-md">Advanced CT scans, MRI, and X-ray services using high-resolution global imaging standards.</p>
+</div>
+<!-- Service 4 -->
+<div class="group p-lg bg-surface border border-outline-variant rounded-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-md group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+</div>
+<h3 class="font-headline-sm text-primary mb-sm">Surgical Excellence</h3>
+<p class="text-body-md text-on-surface-variant mb-md">Minimally invasive and complex surgeries performed by internationally trained surgical teams.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-xxl bg-surface">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-xxl items-center">
+<div class="relative order-2 lg:order-1">
+<div class="aspect-square bg-cover bg-center rounded-3xl shadow-2xl relative z-10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWDK95i1QTFarvfzck6diBqvm7P4o5W6NjGU9hQmuNmhpn93b_ANgr5F3uzAsv1pW8CB20sGYHxd06JowAn0j6R7YcqKJNWpnjEjivQ2llXfnes0S0Q8xco8NI4qGcETXm0snmnlOarV13WbVatPF3xhEgMDa3IS2vnwKPb0vPT8EbahQhTGFzLRUCZSvQx0FY9eVdeDbSOD147BPMZDDPLPJoydAGr8U7N54eo04hSoO7_v_uM2G3LMGm7SFbDID-TXaugYn9g6XW')"></div>
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-primary-fixed/30 rounded-full blur-3xl -z-10"></div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="font-display-lg-mobile text-primary mb-lg">A Different Kind of Hospital Experience</h2>
+<div class="space-y-xl">
+<div class="flex gap-md">
+<div class="shrink-0 w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">devices</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-on-surface mb-xs">Advanced Technology</h4>
+<p class="text-body-md text-on-surface-variant">We invest in the latest diagnostic tools and therapeutic equipment from top global manufacturers to ensure accuracy.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="shrink-0 w-12 h-12 rounded-full bg-primary-fixed/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-on-surface mb-xs">Expert Local &amp; Global Doctors</h4>
+<p class="text-body-md text-on-surface-variant">Our team bridges Nigerian clinical expertise with international training and standards.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="shrink-0 w-12 h-12 rounded-full bg-tertiary-fixed/40 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">volunteer_activism</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-on-surface mb-xs">Patient-First Approach</h4>
+<p class="text-body-md text-on-surface-variant">We prioritize your comfort and dignity, ensuring personalized treatment plans tailored to your specific needs.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Facility Gallery -->
+<section class="py-xxl bg-surface">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-xxl">
+<h2 class="font-display-lg-mobile text-primary mb-sm">Inside NorthCare Clinic</h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">A look at the facilities designed for your comfort and recovery.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Facility 1 -->
+<div class="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500">
+<div class="aspect-[4/3] overflow-hidden">
+<img alt="Modern Main Lobby" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIXBQJO0Z25PjmeO58JgAdH0qhDWeHIj5MQS5kWY-jfpu0ESjHh925UHaunfSTlEzIQF-8apegK9EttYDuKoZwtS9-Tvv4HEzQc1EU4hVAfy5HWVUig7sDQeANyPd5Oaj-kHWVf8aB_bIrpFp7O5c6yDtGawg2X5znnJsZQjrrqKoZvD3ZnHOMJTTUkSHuPaADWmzayfqaQ_8k1o66Jbss5wHxT-wwmrIJXNCu6B3wi1nGG7dV1vp0LLWORQNMPB6Xr5FG6HdTaJNV"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex flex-col justify-end p-lg">
+<h3 class="font-headline-sm text-on-primary">Modern Main Lobby</h3>
+</div>
+</div>
+<!-- Facility 2 -->
+<div class="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500">
+<div class="aspect-[4/3] overflow-hidden">
+<img alt="Private Maternity Suite" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfu_oH9wzHZEY2TtscouEfK9PsnrsfmFevRvJNgNrjCsBRw1_uv0a1DErhwYr3trpCrT1iHGtbU0jmLSgaNU5MDZoaxGYWY9_QUjYyqCn7tD1_E2rRv0JX3T8Ti_k25B9vwcNa-8tAjjdgtgugG3848ul0QKipNpNXNjP6lrql3M0UHvMlGFSPzOq092wEbOPCtf_1ZamvmA2a-gTnELvAYQhoOyjxyEIRmZJg-YMIzBNdNBM9IF8CVoddUyd1nv2tg_JUR9nM8LwB"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex flex-col justify-end p-lg">
+<h3 class="font-headline-sm text-on-primary">Private Maternity Suite</h3>
+</div>
+</div>
+<!-- Facility 3 -->
+<div class="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500">
+<div class="aspect-[4/3] overflow-hidden">
+<img alt="Advanced Diagnostic Centre" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjTuCJdJkrNL0TnJdj-EoZ-0IgjSxt3CRd4pPWJ0xVklkpNvrm9ucVYI3MTbCFnp1jX3W9DMnSV-DkxrNJx048phNoNkMrYPqeh2-Y3GszQwOSCefU_xvsONB8rcu3NmpLxHvLFBugO2yb9vhoJZ2ASNn4f5BBc4wqLkQ-Rffn9EXrjKENByTsdf93ZIRgzKmse55IbYr2E9xlGCVATi87G8W_BdjJcKG19h1bYslDvrcBrYEkAGrXAHu4HbeRSBZs_W_XkCVFHJ17"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex flex-col justify-end p-lg">
+<h3 class="font-headline-sm text-on-primary">Advanced Diagnostic Centre</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-xxl bg-surface-container-low" id="specialists">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-xxl gap-lg">
+<div class="max-w-2xl">
+<h2 class="font-display-lg-mobile text-primary mb-sm">Our Leading Specialists</h2>
+<p class="text-body-lg text-on-surface-variant">Meet the experts committed to your wellness. Our doctors are pioneers in their respective fields.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Specialist 1 -->
+<div class="bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
+<div class="h-80 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Portrait of Dr. Adewale Okafor, Chief Surgeon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqczsG4L-RdkWJBDVkXQw7Pfmcr8LBTbeSxyjr-AKDUrK5PURBiu0mTyEw8eK98eBfXwwWqqFMuug6atIT6fM7ocBy0ptRQ0ZYJcd4Dr4T16Pt9YB-jsqskVjgskJRDQLH-LY87WoiJCRAjh8Kow8tQtjTRbE7nrDjmipe9lqhmzlJJON_NkhE2HdxYzH683hPFQGAqHaeaalqfn1gTs2dh4nZvJzkgY1w2yyHHtcS1YM2hXTNJkAnN21dOZJzuWkJFspkNRf-sAwp"/>
+</div>
+<div class="p-lg">
+<p class="text-caption text-secondary font-bold uppercase tracking-wider mb-xs">Chief Surgeon</p>
+<h3 class="font-headline-sm text-primary mb-xs">Dr. Adewale Okafor</h3>
+<p class="text-body-md text-on-surface-variant mb-md">Specializing in minimally invasive cardiac and thoracic procedures.</p>
+<a class="block text-center w-full py-sm border border-primary/20 text-primary font-label-md rounded-lg group-hover:bg-primary group-hover:text-on-primary transition-all" href="#appointment">Book Consultation</a>
+</div>
+</div>
+<!-- Specialist 2 -->
+<div class="bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
+<div class="h-80 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Portrait of Dr. Amina Bello, Head of Pediatrics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAevfjCPtL4D-Cjd0rBPX8tAZskP-Ma2c4zSbfuhroG7I0yHkf-jCMci2RAmP-MSatHQ7fw61QeuNzj_9Izf9Nr1RSjeSRA5dlYlsaGj1tfqHNFydYSTvycQhsc6aKVtS_Q1M9MH0qc0zxs-OrcJ_DsDpFAYjkbR-t6dKtwH7jD3u1GY-uVrJVo6A747iBn9U_arTqX_e09zzbjzmPnxxGajy84kvwTE4vIgBVDoZuqiVkVtX47yHsrAzp2zvQKUaTT179PSH8LwhAr"/>
+</div>
+<div class="p-lg">
+<p class="text-caption text-secondary font-bold uppercase tracking-wider mb-xs">Head of Pediatrics</p>
+<h3 class="font-headline-sm text-primary mb-xs">Dr. Amina Bello</h3>
+<p class="text-body-md text-on-surface-variant mb-md">Expert in neonatal care and developmental pediatrics with 15+ years experience.</p>
+<a class="block text-center w-full py-sm border border-primary/20 text-primary font-label-md rounded-lg group-hover:bg-primary group-hover:text-on-primary transition-all" href="#appointment">Book Consultation</a>
+</div>
+</div>
+<!-- Specialist 3 -->
+<div class="bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
+<div class="h-80 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Portrait of Dr. Chidi Nwosu, Cardiology Specialist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLu-aNAGX3-hOF3OMhrBI-ekEgx6QFpb0O5iylGlcJH52sbnRu6aA15O1nscckwVchGODstFRaRIa1iFO_TgwNC6YHuxAYWNNmjwEt4WzzZJyvVeXkdg3g1S7UDjIlmKwohhefl_BY26xb_txDyF7RnyHyAjLhSAuMri91oRoVGRm9RNvNGmRJBkEKer-iqY2U0yfvaaV3KFbLS6--iJwRoUSYsONmgA7YxQZ4Z7cGVb3gu8Uy5J0DhsgsCRP2pul501c9_DYJVS1D"/>
+</div>
+<div class="p-lg">
+<p class="text-caption text-secondary font-bold uppercase tracking-wider mb-xs">Cardiology Specialist</p>
+<h3 class="font-headline-sm text-primary mb-xs">Dr. Chidi Nwosu</h3>
+<p class="text-body-md text-on-surface-variant mb-md">Lead cardiologist focusing on preventative heart health and structural heart disease.</p>
+<a class="block text-center w-full py-sm border border-primary/20 text-primary font-label-md rounded-lg group-hover:bg-primary group-hover:text-on-primary transition-all" href="#appointment">Book Consultation</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-xxl bg-primary overflow-hidden relative" id="testimonials">
+<div class="absolute inset-0 pattern-overlay opacity-5"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="text-center mb-xxl">
+<h2 class="font-display-lg-mobile text-on-primary mb-sm">Voices of Trust</h2>
+<p class="text-body-lg text-primary-fixed/80">Real stories from the families we serve every day.</p>
+<span class="block text-xs uppercase tracking-widest text-primary-fixed/50 mt-sm">Illustrative sample quotes for demonstration purposes</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Testimonial 1 -->
+<div class="bg-primary-container p-xl rounded-2xl shadow-xl border border-primary/30">
+<div class="flex gap-xs text-tertiary-container mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-lg text-on-primary italic mb-lg">"The level of care during my delivery was exceptional. I felt like I was in a hospital in London, but with the warmth of my Nigerian brothers and sisters."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed"></div>
+<div>
+<p class="font-label-md text-on-primary font-bold">Sample Patient</p>
+<p class="text-caption text-primary-fixed/60">New Mother</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-primary-container p-xl rounded-2xl shadow-xl border border-primary/30">
+<div class="flex gap-xs text-tertiary-container mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-lg text-on-primary italic mb-lg">"NorthCare saved my father's life. Their emergency response and cardiology team are world-class. We are forever grateful for their precision."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed"></div>
+<div>
+<p class="font-label-md text-on-primary font-bold">Sample Patient</p>
+<p class="text-caption text-primary-fixed/60">Lagos Resident</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-primary-container p-xl rounded-2xl shadow-xl border border-primary/30 md:hidden lg:block">
+<div class="flex gap-xs text-tertiary-container mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-lg text-on-primary italic mb-lg">"Clean, professional, and technologically advanced. It's refreshing to see this level of medical excellence right here in Nigeria."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed"></div>
+<div>
+<p class="font-label-md text-on-primary font-bold">Sample Patient</p>
+<p class="text-caption text-primary-fixed/60">Business Executive</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Appointment Form -->
+<section class="py-xxl bg-surface" id="appointment">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="bg-surface-container-lowest rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+<div class="lg:w-1/2 p-xl lg:p-xxl bg-primary text-on-primary flex flex-col justify-center">
+<h2 class="font-display-lg-mobile text-on-primary mb-md">Start Your Journey to Wellness</h2>
+<p class="text-body-lg text-primary-fixed/80 mb-xl">Request a call back or schedule your first consultation with our expert team. We are here for you.</p>
+<ul class="space-y-md">
+<li class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary-fixed">check_circle</span>
+<span class="text-body-md">Guaranteed same-day response</span>
+</li>
+<li class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary-fixed">check_circle</span>
+<span class="text-body-md">Personalized specialist matching</span>
+</li>
+<li class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary-fixed">check_circle</span>
+<span class="text-body-md">Confidential health assessment</span>
+</li>
+</ul>
+</div>
+<div class="lg:w-1/2 p-xl lg:p-xxl">
+<form class="grid grid-cols-1 md:grid-cols-2 gap-lg" id="appointmentForm">
+<div class="col-span-full md:col-span-1">
+<label class="block font-label-md text-on-surface mb-xs">Full Name</label>
+<input class="w-full bg-surface-container-low border-outline-variant rounded-lg p-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" name="fullName" placeholder="John Doe" type="text" required=""/>
+</div>
+<div class="col-span-full md:col-span-1">
+<label class="block font-label-md text-on-surface mb-xs">Phone Number</label>
+<input class="w-full bg-surface-container-low border-outline-variant rounded-lg p-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" name="phone" placeholder="+234 ..." type="tel" required=""/>
+</div>
+<div class="col-span-full">
+<label class="block font-label-md text-on-surface mb-xs">Select Service</label>
+<select class="w-full bg-surface-container-low border-outline-variant rounded-lg p-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" name="service">
+<option>General Consultation</option>
+<option>Maternity Care</option>
+<option>Cardiology Screening</option>
+<option>Diagnostic Imaging</option>
+<option>Other</option>
+</select>
+</div>
+<div class="col-span-full">
+<label class="block font-label-md text-on-surface mb-xs">Additional Information</label>
+<textarea class="w-full bg-surface-container-low border-outline-variant rounded-lg p-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" name="message" placeholder="Briefly describe your medical needs..." rows="4"></textarea>
+</div>
+<div class="col-span-full">
+<button class="w-full py-md bg-tertiary-container text-on-tertiary-container font-headline-sm rounded-xl hover:shadow-lg transition-all active:scale-[0.98]" type="submit">
+                                    Request Appointment
+                                </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-gutter py-xxl max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-xs mb-lg">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">NorthCare Clinic</span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-lg">Setting new standards for healthcare in Nigeria through clinical excellence and compassionate service.</p>
+</div>
+<div>
+<h4 class="font-label-md text-primary font-bold mb-lg uppercase tracking-wider">Quick Links</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant hover:text-secondary underline decoration-transparent hover:decoration-secondary transition-all" href="#services">Maternity Care</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary underline decoration-transparent hover:decoration-secondary transition-all" href="#services">Cardiology Unit</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary underline decoration-transparent hover:decoration-secondary transition-all" href="#services">Diagnostic Lab</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary underline decoration-transparent hover:decoration-secondary transition-all" href="#services">Surgical Excellence</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary font-bold mb-lg uppercase tracking-wider">Kadzoris</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant hover:text-secondary underline decoration-transparent hover:decoration-secondary transition-all" href="demo.html">← Back to Demos</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary underline decoration-transparent hover:decoration-secondary transition-all" href="index.html">Want a site like this? Apply free →</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary font-bold mb-lg uppercase tracking-wider">Contact Us</h4>
+<ul class="space-y-md text-on-surface-variant">
+<li class="flex gap-md">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<span>Plot 45, Victoria Island Extension, Lagos, Nigeria</span>
+</li>
+<li class="flex gap-md">
+<span class="material-symbols-outlined text-secondary">call</span>
+<span>+234 (0) 707 159 4483</span>
+</li>
+<li class="flex gap-md">
+<span class="material-symbols-outlined text-secondary">mail</span>
+<span>hello@kadzoris.ng</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-outline-variant py-lg">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-md text-on-surface-variant text-caption">
+<p>NorthCare Clinic — a sample site built on the Kadzoris platform. © 2026.</p>
+</div>
+</div>
+</footer>
+<!-- FAB for Emergency -->
+<div class="fixed bottom-gutter right-gutter z-40 md:hidden">
+<a class="w-16 h-16 bg-tertiary-container text-on-tertiary-container rounded-full shadow-2xl flex items-center justify-center animate-bounce" href="tel:+2347071594483">
+<span class="material-symbols-outlined text-3xl">emergency</span>
+</a>
+</div>
+
+<script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+            mobileMenu.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+            });
+        }
+
+        // Smooth scroll for in-page anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Appointment form -> opens WhatsApp with entered details (no backend needed for this sample)
+        const appointmentForm = document.getElementById('appointmentForm');
+        if (appointmentForm) {
+            appointmentForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const fullName = appointmentForm.fullName.value.trim();
+                const phone = appointmentForm.phone.value.trim();
+                const service = appointmentForm.service.value;
+                const message = appointmentForm.message.value.trim();
+                if (!fullName || !phone) {
+                    alert('Please fill in your name and phone number.');
+                    return;
+                }
+                const text = `Hi, I'd like to request an appointment at NorthCare Clinic.%0A%0AName: ${encodeURIComponent(fullName)}%0APhone: ${encodeURIComponent(phone)}%0AService: ${encodeURIComponent(service)}%0AMessage: ${encodeURIComponent(message)}`;
+                window.open(`https://wa.me/2347071594483?text=${text}`, '_blank');
+            });
+        }
+    </script>
+</body></html>
