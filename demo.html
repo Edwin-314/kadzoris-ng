@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demos — Kadzoris</title>
+<link rel="icon" type="image/jpeg" href="https://6a95c2fa3a1c560008b2f7f9--kadzoris.netlify.app/logo.jpg">
+<link rel="stylesheet" href="style.css">
+<style>
+  .demo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media (max-width:900px){.demo-grid{grid-template-columns:1fr;}}
+  .demo-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--ink-2);
+    transition:transform .25s;}
+  .demo-card:hover{transform:translateY(-4px);}
+  .demo-card .dimg{height:200px;background-size:cover;background-position:center;}
+  .demo-card .dbody{padding:24px;}
+  .demo-card .dtag{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--brass-bright);
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;display:block;}
+  .demo-card h3{font-size:1.15rem;margin-bottom:8px;}
+  .demo-card p{color:var(--ash);font-size:0.88rem;line-height:1.5;margin-bottom:18px;}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="https://6a95c2fa3a1c560008b2f7f9--kadzoris.netlify.app/logo.jpg" alt="Kadzoris logo"><span class="brand">Kadzoris<span>.</span></span></a>
+    <div class="navlinks"><a href="index.html">Home</a><a href="services.html">Solutions</a><a href="industries.html">Industries</a><a href="index.html#projects">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <a href="digital-gap-assessment.html" class="navcta" data-track="digital_gap_started">Find Your Digital Gap</a>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Home</a><a href="services.html">Solutions</a><a href="industries.html">Industries</a><a href="index.html#projects">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="digital-gap-assessment.html" class="navcta" data-track="digital_gap_started">Find Your Digital Gap</a></div>
+
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">See it before you apply</div>
+    <h1>Full sample websites, built end-to-end.</h1>
+    <p>Working demonstration sites that show how different industries can use clearer digital customer journeys. They are examples, not claims of completed client work.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="demo-grid">
+      <div class="demo-card">
+        <div class="dimg" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtRplEk0gwWR6bKXwCyNTjpjOVTwh3agDcNR3-64_NoIxprz-YaRWgc4flzh-Vwf37QP_tsNmrsAuu8hZdJtUjcx9gPLVd9Kuzo8_0SvPNFoZ9O9R41iUmhtjWU2-oP04YV3C36z2kZ7qyM28CEEYKdpUa5htNEpBJTAvBvfMGawUTd61FJ7y3EcTxxUNfJ-RNNc-wfSS9hN0bPvc5E1MGQevNejRlI5vZTl7QcOY3uzuxOJPRtd95PrF3KCCXEvXoWnsRRDuNeeGy');"></div>
+        <div class="dbody">
+          <span class="dtag">Healthcare</span>
+          <h3>NorthCare Clinic</h3>
+          <p>Appointment booking, services, and patient-facing information for a modern clinic.</p>
+          <a href="demo-healthcare.html" class="btn-secondary">View Sample →</a>
+        </div>
+      </div>
+      <div class="demo-card">
+        <div class="dimg" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuC97uvobKkkhvKtfq5Jj-hpuj6QbbN9JZkHsc8AcqUpVbKQJDhVaAOsR-1cE_x9KdDK2eVLzjK3XuZNQNgi-nRx29J5iqlxkhCNfMb_hrf6g7ghdw1CHpErrr_Ob7nnNm0qveQgAdleR3TX7U6ao9rt8eVXkgOzA8HP0xRZLC5EW-l4IG6IDoAVLqo0GAjPWANnyf01yEXMKKKknEVpNXSjnUfVfDn73MaUxHgD589RX1lbxRoF1LLFE11DhtXmkXLOhM8U6PHzUXOf');"></div>
+        <div class="dbody">
+          <span class="dtag">Education</span>
+          <h3>Greenhills Academy</h3>
+          <p>Admissions, programs, and enrollment built for a growing private school.</p>
+          <a href="demo-school.html" class="btn-secondary">View Sample →</a>
+        </div>
+      </div>
+      <div class="demo-card">
+        <div class="dimg" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAodBy7Bf6MWBSUu6us_JqhO1IYs8ecDubBJyK1DWYhrf_6W8ailbl6Y9QLzRQz95N9mr6FVEcUdef-I-XIkXx0O78ehbt87eIbLljLqGUP0DRVHU5WG40cJhork5M6NQ48fpZBsz6xiRFBiGygcVi8YAqCVjKR5O6wQ6Sy8rGKlBaSmrfIfccfVMh66mbSutdP0WVWDyEVN9yiQtP2BD7uGi_1y3m_A1DNV2-9eFJtTeSItjx0MXgVgWaencGxmwcgy47vx7oFPmTY');"></div>
+        <div class="dbody">
+          <span class="dtag">Hospitality</span>
+          <h3>Avenor Grand Hotel</h3>
+          <p>A cinematic, luxury-hospitality one-pager with rooms, dining, and events.</p>
+          <a href="demo-hotel.html" class="btn-secondary">View Sample →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>Want something like this for your organization?</h2>
+      <p>These are samples of what's possible — your site is built around your business, not a template.</p>
+      <div class="ctas"><a href="contact.html#consult" class="btn-primary" data-track="consultation_clicked">Discuss Your Digital Gap →</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Kadzoris — AI-Powered Digital Solutions for Nigerian Businesses</p>
+    <div class="flinks"><a href="services.html">Solutions</a><a href="industries.html">Industries</a><a href="digital-gap-assessment.html">Digital Gap Assessment</a><a href="contact.html">Contact</a></div>
+    <p>© 2026 Kadzoris. All rights reserved.</p>
+  </div>
+</footer>
+<a href="https://wa.me/2347071594483" class="wa-float" aria-label="WhatsApp Kadzoris" data-track="whatsapp_clicked">◆</a>
+<script src="script.js"></script>
+</body>
+</html>
