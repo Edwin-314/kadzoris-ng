@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kadzoris — Full Site Preview</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+:root{
+  --ink:#0F1E19; --ink-2:#16281F; --ink-3:#1C332A; --paper:#EDE6D6;
+  --brass:#C08D3F; --brass-bright:#D9A65C; --rust:#9C4A32; --ash:#8B948E; --line:rgba(237,230,214,0.12);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Newsreader',serif;font-weight:600;letter-spacing:-0.01em;}
+h1 em,h2 em{font-style:italic;color:var(--brass-bright);}
+.mono{font-family:'JetBrains Mono',monospace;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.001ms !important;transition-duration:.001ms !important;}}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:20px 0;
+  background:linear-gradient(to bottom, rgba(15,30,25,0.94), rgba(15,30,25,0));backdrop-filter:blur(6px);}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;}
+.brand{font-family:'Newsreader',serif;font-weight:700;font-size:1.15rem;}
+.brand span{color:var(--brass-bright);}
+.navlinks{display:flex;gap:32px;font-size:0.9rem;color:var(--ash);}
+.navlinks a{cursor:pointer;}
+.navlinks a:hover{color:var(--paper);}
+.navlinks a.active{color:var(--brass-bright);}
+.navcta{font-size:0.82rem;font-weight:600;padding:10px 20px;border:1px solid var(--brass);border-radius:100px;
+  transition:background .25s,color .25s;white-space:nowrap;cursor:pointer;}
+.navcta:hover{background:var(--brass);color:var(--ink);}
+@media (max-width:860px){.navlinks{display:none;}.navcta{display:none;}}
+.hero-grid-responsive{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start;}
+@media (max-width:900px){.hero-grid-responsive{grid-template-columns:1fr;gap:32px;}}
+
+.page-hero{padding:150px 0 70px;border-bottom:1px solid var(--line);}
+.page-hero h1{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;max-width:760px;}
+.page-hero p{color:var(--ash);font-size:1.05rem;max-width:560px;margin-top:20px;line-height:1.6;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:0.75rem;
+  color:var(--brass-bright);border:1px solid rgba(192,141,63,0.4);padding:6px 14px;border-radius:100px;margin-bottom:20px;}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--brass-bright);animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+
+section{padding:100px 0;}
+.section-head{max-width:640px;margin-bottom:56px;}
+.section-head h2{font-size:clamp(1.8rem,3.2vw,2.5rem);margin-bottom:16px;line-height:1.15;}
+.section-head p{color:var(--ash);font-size:1.02rem;line-height:1.6;}
+
+.btn-primary{background:var(--brass);color:var(--ink);font-weight:700;font-size:0.94rem;padding:15px 28px;
+  border-radius:8px;display:inline-flex;align-items:center;gap:10px;transition:transform .2s,background .2s;
+  border:none;cursor:pointer;}
+.btn-primary:hover{background:var(--brass-bright);transform:translateY(-2px);}
+.btn-secondary{border:1px solid var(--line);color:var(--paper);font-weight:500;font-size:0.94rem;padding:15px 28px;
+  border-radius:8px;display:inline-flex;align-items:center;gap:10px;transition:border-color .2s,background .2s;
+  background:transparent;cursor:pointer;}
+.btn-secondary:hover{border-color:var(--paper);background:rgba(237,230,214,0.05);}
+
+.grid-cards{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+.card{background:var(--ink);padding:30px 26px;transition:background .25s;}
+.card:hover{background:var(--ink-2);}
+.card .cnum{font-family:'JetBrains Mono',monospace;color:var(--brass-bright);font-size:0.78rem;margin-bottom:14px;}
+.card h3{font-size:1.08rem;margin-bottom:10px;}
+.card p{color:var(--ash);font-size:0.9rem;line-height:1.55;}
+
+.stat-row{display:flex;gap:56px;flex-wrap:wrap;}
+.stat .n{font-family:'JetBrains Mono',monospace;font-size:2.2rem;color:var(--brass-bright);font-weight:600;}
+.stat .l{color:var(--ash);font-size:0.85rem;margin-top:4px;}
+
+.final-cta{background:linear-gradient(135deg,var(--ink-3),var(--ink));border:1px solid var(--line);border-radius:24px;
+  padding:76px 48px;text-align:center;}
+.final-cta h2{font-size:clamp(1.7rem,3.4vw,2.6rem);margin-bottom:16px;}
+.final-cta p{color:var(--ash);font-size:1.02rem;margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto;}
+.final-cta .ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+footer{padding:44px 0;border-top:1px solid var(--line);}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+footer p{color:var(--ash);font-size:0.82rem;}
+footer .flinks{display:flex;gap:24px;flex-wrap:wrap;font-size:0.82rem;color:var(--ash);}
+footer .flinks a:hover{color:var(--paper);}
+
+.wa-float{position:fixed;bottom:26px;right:26px;background:#22c35e;color:#0F1E19;width:56px;height:56px;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;z-index:60;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);font-size:1.4rem;}
+
+.g4{grid-template-columns:repeat(4,1fr);}
+.g2{grid-template-columns:repeat(2,1fr);}
+@media (max-width:900px){.g4{grid-template-columns:repeat(2,1fr) !important;}.g2{grid-template-columns:1fr !important;}}
+
+.page{display:none;}
+.page.active{display:block;}
+
+/* gallery */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;}
+.filter-btn{font-size:0.85rem;padding:9px 18px;border-radius:100px;border:1px solid var(--line);color:var(--ash);
+  cursor:pointer;background:transparent;transition:all .2s;}
+.filter-btn:hover{border-color:var(--brass);color:var(--paper);}
+.filter-btn.on{background:var(--brass);border-color:var(--brass);color:var(--ink);font-weight:600;}
+.masonry{columns:3;column-gap:20px;}
+@media (max-width:900px){.masonry{columns:2;}}
+@media (max-width:600px){.masonry{columns:1;}}
+.tile{break-inside:avoid;margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+  transition:transform .25s;cursor:pointer;}
+.tile:hover{transform:translateY(-4px);}
+.tile-art{display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-size:1.3rem;color:rgba(237,230,214,0.85);}
+.tile-body{padding:16px 18px;background:var(--ink-2);}
+.tile-cat{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--brass-bright);text-transform:uppercase;letter-spacing:.06em;}
+.tile-name{font-weight:600;margin-top:4px;font-size:0.95rem;}
+.tile.hidden{display:none;}
+
+/* contact form */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media (max-width:700px){.form-grid{grid-template-columns:1fr;}}
+label{display:block;font-size:0.82rem;color:var(--ash);margin-bottom:6px;}
+input,select,textarea{width:100%;background:var(--ink-2);border:1px solid var(--line);color:var(--paper);
+  border-radius:8px;padding:12px 14px;font-family:'Inter',sans-serif;font-size:0.92rem;margin-bottom:16px;}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brass);}
+textarea{resize:vertical;min-height:100px;}
+.contact-side .item{margin-bottom:24px;}
+.contact-side .k{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--brass-bright);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+.map-box{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;height:180px;display:flex;
+  align-items:center;justify-content:center;color:var(--ash);font-size:0.85rem;margin-top:24px;}
+
+.contact-cols{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;}
+@media (max-width:800px){.contact-cols{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" style="display:flex;align-items:center;gap:10px;text-decoration:none;" data-go="home">
+      <img src="https://6a95c2fa3a1c560008b2f7f9--kadzoris.netlify.app/logo.jpg" alt="Kadzoris logo" style="height:38px;width:38px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+      <span class="brand" style="margin:0;">Kadzoris<span>.</span></span>
+    </a>
+    <div class="navlinks">
+      <a data-go="home" class="active">Home</a>
+      <a data-go="about">About</a>
+      <a data-go="services">Services</a>
+      <a data-go="industries">Industries</a>
+      <a href="demo.html">Demo</a>
+      <a data-go="contact">Contact</a>
+    </div>
+    <a data-go="contact" class="navcta">Apply Now</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div class="page active" data-page="home">
+  <section style="padding:170px 0 90px;position:relative;background-image:linear-gradient(180deg, rgba(15,30,25,0.35) 0%, rgba(15,30,25,0.82) 60%, rgba(15,30,25,0.97) 100%), url('https://6a95c2fa3a1c560008b2f7f9--kadzoris.netlify.app/hero-bg.png');background-size:cover;background-position:center 20%;">
+    <div class="wrap">
+      <div class="eyebrow">Now onboarding — first 100 businesses & organizations</div>
+      <div class="hero-grid-responsive">
+        <div>
+          <h1 style="font-size:clamp(2.3rem,5vw,3.7rem);line-height:1.08;margin-bottom:24px;">
+            Transform your business with <em>AI-powered</em> digital solutions.
+          </h1>
+          <p style="color:var(--ash);font-size:1.1rem;line-height:1.6;max-width:520px;margin-bottom:34px;">
+            From professional websites and mobile apps to AI automation and custom business software, Kadzoris helps Nigerian organizations grow faster, operate smarter, and compete in today's digital economy.
+          </p>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <a data-go="contact" class="btn-primary">Apply Now →</a>
+            <a data-go="contact" class="btn-secondary">Further Inquiries</a>
+          </div>
+        </div>
+        <div style="background:rgba(22,40,31,0.92);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:16px;padding:32px;box-shadow:0 30px 80px -20px rgba(0,0,0,0.6);">
+          <div class="mono" style="font-size:0.75rem;color:var(--brass-bright);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;">The Campaign</div>
+          <h3 style="font-size:1.4rem;margin-bottom:14px;">The first 100 businesses & organizations in Nigeria get a professional website FREE.</h3>
+          <p style="color:var(--ash);font-size:0.92rem;line-height:1.6;margin-bottom:20px;">Development is free for approved organizations. You only ever pay two things — hosting and your domain, both billed at cost.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:0.9rem;">
+            <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:10px;">
+              <span style="color:var(--ash);">Website design & development</span><strong style="color:var(--brass-bright);">Free</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:10px;">
+              <span style="color:var(--ash);">Hosting (12 months)</span><strong>₦60,000/yr</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;">
+              <span style="color:var(--ash);">Domain registration (12 months)</span><strong>₦20,000/yr</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:var(--ash);font-size:0.85rem;">
+      <span>Responsive Design</span><span>Fast Loading</span><span>SEO Optimized</span><span>AI Powered</span>
+      <span>Secure</span><span>Cloud Hosted</span><span>Mobile Friendly</span><span>Professional Support</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What we build</div>
+        <h2>Digital solutions built around business outcomes.</h2>
+        <p>Not just software — systems that help you serve customers faster, run leaner, and grow with confidence.</p>
+      </div>
+      <div class="grid-cards g4">
+        <div class="card"><div class="cnum">01</div><h3>Professional Websites</h3><p>A fast, credible online presence that turns visitors into customers.</p></div>
+        <div class="card"><div class="cnum">02</div><h3>Web & Mobile Apps</h3><p>Custom applications built around how your business actually works.</p></div>
+        <div class="card"><div class="cnum">03</div><h3>AI Automation</h3><p>Chatbots and workflow automation that save hours every week.</p></div>
+        <div class="card"><div class="cnum">04</div><h3>Business Systems</h3><p>Booking, inventory, HR, and management systems built for your sector.</p></div>
+      </div>
+      <div style="margin-top:32px;"><a data-go="services" class="btn-secondary">See all services →</a></div>
+    </div>
+  </section>
+
+  <section style="background:var(--ink-2);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Who we serve</div>
+        <h2>Built for the organizations that run Nigeria.</h2>
+      </div>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid var(--line);margin-bottom:32px;">
+        <img src="https://6a95c2fa3a1c560008b2f7f9--kadzoris.netlify.app/hero-bg.png" alt="Kadzoris serves schools, hospitals, hotels, restaurants, real estate, and healthcare organizations" style="width:100%;display:block;">
+      </div>
+      <div class="grid-cards g4">
+        <div class="card"><h3>Law Firms</h3><p>Practice areas & client trust</p></div>
+        <div class="card"><h3>Churches</h3><p>Services, giving & sermons</p></div>
+        <div class="card"><h3>NGOs</h3><p>Mission, impact & donations</p></div>
+        <div class="card"><h3>Manufacturing</h3><p>Capacity & B2B inquiries</p></div>
+      </div>
+      <div style="margin-top:32px;"><a data-go="industries" class="btn-secondary">See all industries →</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Why Kadzoris</div><h2>Built for speed. Priced for reality.</h2></div>
+      <div class="grid-cards g4">
+        <div class="card"><h3>Fast Delivery</h3><p>Most sites live within a week of approval.</p></div>
+        <div class="card"><h3>AI Expertise</h3><p>Automation baked into what we build, not bolted on.</p></div>
+        <div class="card"><h3>Business-Focused</h3><p>We design for outcomes, not decoration.</p></div>
+        <div class="card"><h3>Affordable</h3><p>Transparent, at-cost hosting and domain pricing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--ink-2);">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">How it works</div><h2>From application to launch.</h2></div>
+      <div class="grid-cards g4">
+        <div class="card"><div class="cnum">Discovery</div><p>We learn your business and your customers.</p></div>
+        <div class="card"><div class="cnum">Design + Build</div><p>Your site takes shape, reviewed with you at each stage.</p></div>
+        <div class="card"><div class="cnum">Testing</div><p>Checked across devices before anything goes live.</p></div>
+        <div class="card"><div class="cnum">Launch + Support</div><p>Domain connected, hosting active, help when you need it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Common questions</div><h2>Before you apply.</h2></div>
+      <div class="grid-cards g2">
+        <div class="card"><h3>Is the website really free?</h3><p>Yes — design and development are free for the first 100 approved organizations. You only pay hosting and domain registration, both at cost.</p></div>
+        <div class="card"><h3>Who owns the website?</h3><p>You do. Your domain is registered in your organization's name, not ours.</p></div>
+        <div class="card"><h3>How long does development take?</h3><p>Most projects launch within a week of approval, depending on complexity.</p></div>
+        <div class="card"><h3>Can we upgrade later?</h3><p>Yes. Many clients start with a landing page and grow into a full system as they need it.</p></div>
+        <div class="card"><h3>Do you provide hosting?</h3><p>Yes, hosting is included in your annual ₦60,000 payment — no separate provider to manage.</p></div>
+        <div class="card"><h3>Do you work outside Nigeria?</h3><p>Our first 100 campaign is focused on Nigeria, but we're open to select projects elsewhere — reach out to discuss.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="final-cta">
+        <h2>Claim your organization's free website.</h2>
+        <p>Apply now to join the first 100 businesses and organizations — or book a short call first if you have questions.</p>
+        <div class="ctas">
+          <a data-go="contact" class="btn-primary">Apply Now →</a>
+          <a data-go="contact" class="btn-secondary">Further Inquiries</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ABOUT -->
+<div class="page" data-page="about">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Our story</div>
+      <h1>Digital transformation, built for African businesses.</h1>
+      <p>Kadzoris exists because too many strong Nigerian businesses are invisible online — not for lack of quality, but for lack of access to the right technology partner.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Mission & Vision</div><h2>Technology that pays for itself in trust.</h2></div>
+      <div class="grid-cards g2">
+        <div class="card"><h3>Mission</h3><p>To help African businesses embrace technology that improves efficiency, growth, and customer experience — starting with a professional online presence.</p></div>
+        <div class="card"><h3>Vision</h3><p>A Nigeria where every serious business, school, clinic, and firm — regardless of size — has the digital tools of a much larger organization.</p></div>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--ink-2);">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">What we stand for</div><h2>Core values.</h2></div>
+      <div class="grid-cards g4">
+        <div class="card"><h3>Innovation</h3><p>We bring modern, AI-driven tools to sectors that have been underserved by them.</p></div>
+        <div class="card"><h3>Integrity</h3><p>Clear pricing, honest timelines, no hidden renewals.</p></div>
+        <div class="card"><h3>Quality</h3><p>Every project meets the same bar, whether it's a landing page or a full system.</p></div>
+        <div class="card"><h3>Customer Success</h3><p>We measure our work by whether it actually brings you business.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Our commitment</div><h2>What you can expect, from day one.</h2></div>
+      <div class="grid-cards g4">
+        <div class="card"><h3>Fast turnaround</h3><p>We aim to launch most sites within a week of approval.</p></div>
+        <div class="card"><h3>Sixteen sectors covered</h3><p>From schools to law firms, we build with sector-specific needs in mind.</p></div>
+        <div class="card"><h3>Transparent pricing</h3><p>Development is free for the first 100. No hidden costs after.</p></div>
+        <div class="card"><h3>Ongoing support</h3><p>We stay reachable after launch, not just before payment.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="final-cta">
+        <h2>Building Africa's next generation of digital businesses.</h2>
+        <p>Join the organizations already claiming their spot in the first 100.</p>
+        <div class="ctas"><a data-go="contact" class="btn-primary">Apply Now →</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SERVICES -->
+<div class="page" data-page="services">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">What we build</div>
+      <h1>Every layer of your digital presence, in one place.</h1>
+      <p>From a single landing page to a full business management system — we build for where you are today and where you're growing to.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Web & Digital Presence</div><h2>Get found. Get trusted.</h2></div>
+      <div class="grid-cards g4">
+        <div class="card"><h3>Corporate Websites</h3><p>Multi-page sites that establish authority for established organizations.</p></div>
+        <div class="card"><h3>Business Landing Pages</h3><p>A focused, fast page built to convert — ideal for the first-100 campaign.</p></div>
+        <div class="card"><h3>E-commerce Websites</h3><p>Sell products online with secure Nigerian payment integration.</p></div>
+        <div class="card"><h3>UI/UX Design</h3><p>Interfaces designed around how your customers actually think and click.</p></div>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--ink-2);">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Apps & Custom Software</div><h2>Software that fits how you already work.</h2></div>
+      <div class="grid-cards g4">
+        <div class="card"><h3>Web Applications</h3><p>Custom portals and dashboards built around your workflows.</p></div>
+        <div class="card"><h3>Mobile Apps</h3><p>iOS and Android apps that put your business in your customers' pockets.</p></div>
+        <div class="card"><h3>Customer & Employee Portals</h3><p>Self-service tools that cut down on repetitive support requests.</p></div>
+        <div class="card"><h3>API & Systems Integration</h3><p>Connecting the tools you already use so data moves without manual work.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">AI & Automation</div><h2>Give your business a digital workforce.</h2></div>
+      <div class="grid-cards g4">
+        <div class="card"><h3>AI Chatbots</h3><p>Answer customer questions instantly, day or night.</p></div>
+        <div class="card"><h3>AI Business Assistants</h3><p>Automate scheduling, follow-ups, and routine admin.</p></div>
+        <div class="card"><h3>Workflow Automation</h3><p>Connect forms, messages, and records so nothing falls through the cracks.</p></div>
+        <div class="card"><h3>Digital Strategy & Consulting</h3><p>A clear roadmap for what to digitize first, and why.</p></div>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--ink-2);">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Industry-Specific Systems</div><h2>Built for how your sector actually operates.</h2></div>
+      <div class="grid-cards g4">
+        <div class="card"><h3>School Management</h3><p>Admissions, fees, results, and parent communication in one system.</p></div>
+        <div class="card"><h3>Hospital & Clinic Systems</h3><p>Patient records, appointment booking, and staff scheduling.</p></div>
+        <div class="card"><h3>Hotel & Booking Systems</h3><p>Rooms, reservations, and availability, always up to date.</p></div>
+        <div class="card"><h3>Church & NGO Management</h3><p>Membership, giving, and program tracking made simple.</p></div>
+        <div class="card"><h3>Property Management</h3><p>Listings, tenants, and inquiries for real estate and construction firms.</p></div>
+        <div class="card"><h3>Inventory & Retail Systems</h3><p>Stock tracking for supermarkets, boutiques, and manufacturers.</p></div>
+        <div class="card"><h3>CRM & ERP</h3><p>Manage customers and operations as you scale beyond a single site.</p></div>
+        <div class="card"><h3>HR & Payroll</h3><p>Staff records and payroll processing without the spreadsheets.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Care & Support</div><h2>We don't disappear after launch.</h2></div>
+      <div class="grid-cards g4">
+        <div class="card"><h3>Website Maintenance</h3><p>Regular updates, backups, and monitoring included.</p></div>
+        <div class="card"><h3>SEO Optimization</h3><p>Ongoing work to help customers find you on Google.</p></div>
+        <div class="card"><h3>Hosting & Domain Management</h3><p>One partner for everything that keeps your site running.</p></div>
+        <div class="card"><h3>Technical Support</h3><p>A real person to call when something needs fixing.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="final-cta">
+        <h2>Not sure what you need yet?</h2>
+        <p>Book a free consultation and we'll recommend the right starting point for your organization.</p>
+        <div class="ctas"><a data-go="contact" class="btn-primary">Further Inquiries →</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- INDUSTRIES -->
+<div class="page" data-page="industries">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Who we serve</div>
+      <h1>Every sector has a digital gap. We close it.</h1>
+      <p>Sixteen sectors, one consistent standard of work — tailored to the outcomes that matter in each one.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="grid-cards g4">
+        <div class="card"><h3>Schools</h3><p>Turn inquiries into enrollments with clear admissions and fee information.</p></div>
+        <div class="card"><h3>Hospitals & Clinics</h3><p>Let patients find services and book appointments without a phone call.</p></div>
+        <div class="card"><h3>Hotels</h3><p>Showcase rooms and take direct bookings, no commission to a listing site.</p></div>
+        <div class="card"><h3>Restaurants</h3><p>Menus, hours, and orders — visible before a customer even walks in.</p></div>
+        <div class="card"><h3>Churches</h3><p>Share services, sermons, and giving options with your congregation.</p></div>
+        <div class="card"><h3>Mosques</h3><p>Prayer times and community programs, always current.</p></div>
+        <div class="card"><h3>NGOs</h3><p>Communicate impact and accept donations transparently.</p></div>
+        <div class="card"><h3>Law Firms</h3><p>Establish credibility with clear practice areas and easy consultation booking.</p></div>
+        <div class="card"><h3>Real Estate</h3><p>List properties and capture serious inquiries fast.</p></div>
+        <div class="card"><h3>Construction</h3><p>Show completed projects and win new contracts through credibility.</p></div>
+        <div class="card"><h3>Logistics</h3><p>Communicate service areas and let clients request quotes online.</p></div>
+        <div class="card"><h3>Manufacturing</h3><p>Reach B2B buyers with clear capacity and product information.</p></div>
+        <div class="card"><h3>Retail & Supermarkets</h3><p>Promote offers and locations to nearby customers.</p></div>
+        <div class="card"><h3>Agriculture</h3><p>Connect farms directly to buyers and distributors.</p></div>
+        <div class="card"><h3>Finance & Professional Services</h3><p>Build the trust that financial decisions require.</p></div>
+        <div class="card"><h3>Government Agencies</h3><p>Clear, accessible public information for the communities you serve.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="final-cta">
+        <h2>Don't see your sector listed?</h2>
+        <p>We build for any serious organization — apply and tell us what you do.</p>
+        <div class="ctas"><a data-go="contact" class="btn-primary">Apply Now →</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- GALLERY -->
+<div class="page" data-page="gallery">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Our work</div>
+      <h1>A look at what we've built.</h1>
+      <p>Websites, apps, dashboards, and automations — filtered by category below.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="filters" id="filters">
+        <button class="filter-btn on" data-cat="all">All</button>
+        <button class="filter-btn" data-cat="websites">Websites</button>
+        <button class="filter-btn" data-cat="apps">Mobile Apps</button>
+        <button class="filter-btn" data-cat="dashboards">Dashboards</button>
+        <button class="filter-btn" data-cat="ai">AI</button>
+        <button class="filter-btn" data-cat="automation">Automation</button>
+      </div>
+      <div class="masonry" id="masonry"></div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="final-cta">
+        <h2>Want your organization featured here next?</h2>
+        <p>Apply for the free-100 campaign and let's build something worth showing.</p>
+        <div class="ctas"><a data-go="contact" class="btn-primary">Apply Now →</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div class="page" data-page="contact">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Apply or book a call</div>
+      <h1>Let's get your organization online.</h1>
+      <p>Tell us about your business below. We'll confirm your spot in the first 100 and reach out within 48 hours.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap contact-cols">
+      <div>
+        <form onsubmit="return false;">
+          <div class="form-grid">
+            <div><label>Organization Name</label><input type="text" placeholder="e.g. Al-Noor Law Chambers"></div>
+            <div><label>Contact Person</label><input type="text" placeholder="Your full name"></div>
+            <div><label>Phone Number</label><input type="tel" placeholder="+234"></div>
+            <div><label>Email Address</label><input type="email" placeholder="you@organization.com"></div>
+            <div>
+              <label>Industry</label>
+              <select>
+                <option>School</option><option>Hospital / Clinic</option><option>Hotel</option>
+                <option>Restaurant</option><option>Church</option><option>Mosque</option><option>NGO</option>
+                <option>Law Firm</option><option>Real Estate</option><option>Construction</option>
+                <option>Logistics</option><option>Manufacturing</option><option>Retail</option><option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label>Service Needed</label>
+              <select>
+                <option>Business Website</option><option>Web / Mobile App</option>
+                <option>AI Automation</option><option>Business Management System</option><option>Not sure yet</option>
+              </select>
+            </div>
+          </div>
+          <label>Current Website (if any)</label>
+          <input type="text" placeholder="https://">
+          <label>Message</label>
+          <textarea placeholder="Tell us a bit about your organization and what you're hoping to achieve online."></textarea>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;">
+            <button class="btn-primary">Apply Now →</button>
+            <button class="btn-secondary">Further Inquiries</button>
+          </div>
+        </form>
+      </div>
+      <div class="contact-side">
+        <div class="item"><div class="k">Phone</div><div>+234 (0) 707 159 4483</div></div>
+        <div class="item"><div class="k">Email</div><div>hello@kadzoris.ng</div></div>
+        <div class="item"><div class="k">Office Hours</div><div>Mon – Fri, 9:00am – 5:00pm WAT</div></div>
+        <div class="item"><div class="k">Social</div><div>Instagram · WhatsApp · LinkedIn</div></div>
+        <div class="item"><div class="k">Address</div><div>House 3B, B Close, 3rd Avenue,<br>Gonin Gora, Kaduna</div></div>
+        <div class="map-box" style="flex-direction:column;gap:10px;">
+          <span>Prefer to talk first?</span>
+          <a href="https://wa.me/2347071594483" class="btn-secondary" style="padding:10px 20px;font-size:0.85rem;">Chat on WhatsApp →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Kadzoris — AI-Powered Digital Solutions for Nigerian Businesses</p>
+    <div class="flinks"><a href="services.html">Solutions</a><a href="industries.html">Industries</a><a href="digital-gap-assessment.html">Digital Gap Assessment</a><a href="contact.html">Contact</a></div>
+    <p>© 2026 Kadzoris. All rights reserved.</p>
+  </div>
+</footer>
+<a href="https://wa.me/2347071594483" class="wa-float" aria-label="WhatsApp Kadzoris" data-track="whatsapp_clicked">◆</a>
+
+<script>
+// page router
+document.querySelectorAll('[data-go]').forEach(el=>{
+  el.addEventListener('click', ()=>{
+    const target = el.dataset.go;
+    document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active', p.dataset.page===target));
+    document.querySelectorAll('.navlinks a').forEach(a=>a.classList.toggle('active', a.dataset.go===target));
+    window.scrollTo({top:0, behavior:'instant'});
+  });
+});
+
+// gallery data + filter
+const items = [
+  {cat:'websites', name:'Kingzglobe Drilling', h:220, grad:'linear-gradient(135deg,#1C332A,#9C4A32)'},
+  {cat:'websites', name:'Al-Noor Law Chambers', h:260, grad:'linear-gradient(135deg,#16281F,#C08D3F)'},
+  {cat:'apps', name:'Zenith HR Companion', h:200, grad:'linear-gradient(135deg,#1C332A,#8B948E)'},
+  {cat:'dashboards', name:'Greenhills Admissions Panel', h:240, grad:'linear-gradient(135deg,#0F1E19,#C08D3F)'},
+  {cat:'ai', name:'ClinicBot Assistant', h:210, grad:'linear-gradient(135deg,#16281F,#9C4A32)'},
+  {cat:'automation', name:'Order-to-WhatsApp Flow', h:230, grad:'linear-gradient(135deg,#1C332A,#D9A65C)'},
+  {cat:'websites', name:'Sahel Hotels Booking Page', h:250, grad:'linear-gradient(135deg,#0F1E19,#8B948E)'},
+  {cat:'apps', name:'Ummah Mosque Companion', h:200, grad:'linear-gradient(135deg,#16281F,#C08D3F)'},
+  {cat:'dashboards', name:'Retail Inventory Console', h:220, grad:'linear-gradient(135deg,#1C332A,#9C4A32)'},
+  {cat:'ai', name:'NGO Impact Reporter', h:230, grad:'linear-gradient(135deg,#0F1E19,#D9A65C)'},
+  {cat:'automation', name:'Property Lead Router', h:210, grad:'linear-gradient(135deg,#16281F,#8B948E)'},
+  {cat:'websites', name:'Farmgate Produce Market', h:240, grad:'linear-gradient(135deg,#1C332A,#C08D3F)'}
+];
+const masonry = document.getElementById('masonry');
+items.forEach(it=>{
+  const tile = document.createElement('div');
+  tile.className = 'tile';
+  tile.dataset.cat = it.cat;
+  tile.innerHTML = `<div class="tile-art" style="height:${it.h}px;background:${it.grad};">${it.name.split(' ').map(w=>w[0]).join('')}</div>
+    <div class="tile-body"><div class="tile-cat">${it.cat}</div><div class="tile-name">${it.name}</div></div>`;
+  masonry.appendChild(tile);
+});
+document.getElementById('filters').addEventListener('click', e=>{
+  if(!e.target.classList.contains('filter-btn')) return;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('on'));
+  e.target.classList.add('on');
+  const cat = e.target.dataset.cat;
+  document.querySelectorAll('.tile').forEach(t=>t.classList.toggle('hidden', cat!=='all' && t.dataset.cat!==cat));
+});
+</script>
+</body>
+</html>
