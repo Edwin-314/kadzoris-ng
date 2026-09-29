@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Digital Gap — Kadzoris</title>
+<link rel="icon" type="image/jpeg" href="https://6a95c2fa3a1c560008b2f7f9--kadzoris.netlify.app/logo.jpg">
+<meta name="description" content="Take the Kadzoris Digital Gap Assessment to identify preliminary opportunities in visibility, conversion, customer experience, automation, operations, data and integration.">
+<link rel="canonical" href="https://kadzoris.ng/digital-gap-assessment.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="brand-link"><img src="https://6a95c2fa3a1c560008b2f7f9--kadzoris.netlify.app/logo.jpg" alt="Kadzoris logo"><span class="brand">Kadzoris<span>.</span></span></a>
+    <div class="navlinks"><a href="index.html">Home</a><a href="services.html">Solutions</a><a href="industries.html">Industries</a><a href="index.html#projects">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <a href="digital-gap-assessment.html" class="navcta active">Find Your Digital Gap</a>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Home</a><a href="services.html">Solutions</a><a href="industries.html">Industries</a><a href="index.html#projects">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="digital-gap-assessment.html" class="navcta">Find Your Digital Gap</a></div>
+
+<section class="page-hero assessment-hero">
+  <div class="wrap">
+    <div class="eyebrow">Digital Gap Assessment</div>
+    <h1>Find Your Digital Gap.</h1>
+    <p>Answer a few questions about how your business currently operates. You'll receive a preliminary, rule-based view of areas where digital technology may improve visibility, customer experience, productivity or operations.</p>
+  </div>
+</section>
+
+<section class="assessment-section">
+  <div class="wrap assessment-shell">
+    <div class="assessment-progress-wrap">
+      <div class="assessment-progress"><span id="assessmentProgressBar"></span></div>
+      <div class="assessment-step-labels"><span class="active">1. Your Business</span><span>2. Customers</span><span>3. Operations</span><span>4. Technology</span><span>5. Growth</span></div>
+    </div>
+
+    <form id="digitalGapForm" class="assessment-form" novalidate>
+      <div class="assessment-step active" data-step="1">
+        <div class="step-head"><span class="mono">STEP 1 OF 5</span><h2>Your Business</h2><p>Start with context. We use this to keep the assessment relevant.</p></div>
+        <div class="form-grid">
+          <div><label>Business name *</label><input name="businessName" required></div>
+          <div><label>Industry *</label><select name="industry" required><option value="">Select industry</option><option>Professional Services</option><option>Hospitality</option><option>Education</option><option>Healthcare</option><option>Retail / E-commerce</option><option>Real Estate</option><option>Construction</option><option>Logistics</option><option>Manufacturing</option><option>Agriculture</option><option>NGO / Association</option><option>Religious Organization</option><option>Other</option></select></div>
+          <div><label>Location *</label><input name="location" placeholder="City / State" required></div>
+          <div><label>Business size</label><select name="businessSize"><option>1–5 people</option><option>6–20 people</option><option>21–50 people</option><option>51–200 people</option><option>200+ people</option></select></div>
+          <div><label>Number of branches / locations</label><select name="branches"><option>1</option><option>2–3</option><option>4–10</option><option>10+</option></select></div>
+          <div><label>Current website</label><input name="website" placeholder="https:// or No website"></div>
+        </div>
+      </div>
+
+      <div class="assessment-step" data-step="2">
+        <div class="step-head"><span class="mono">STEP 2 OF 5</span><h2>Customers</h2><p>How do customers currently discover, contact and move through your business?</p></div>
+        <label>Primary customer acquisition channels</label>
+        <div class="check-grid"><label><input type="checkbox" name="acquisition" value="WhatsApp"> WhatsApp</label><label><input type="checkbox" name="acquisition" value="Instagram/Facebook"> Instagram / Facebook</label><label><input type="checkbox" name="acquisition" value="Google/Search"> Google / Search</label><label><input type="checkbox" name="acquisition" value="Referrals"> Referrals</label><label><input type="checkbox" name="acquisition" value="Walk-ins"> Walk-ins</label><label><input type="checkbox" name="acquisition" value="Website"> Website</label></div>
+        <div class="form-grid">
+          <div><label>How do customers contact you?</label><select name="contactMethod"><option>Mostly WhatsApp / phone</option><option>Website forms / booking</option><option>Social media DMs</option><option>Multiple channels with no central record</option><option>CRM / helpdesk</option></select></div>
+          <div><label>How are enquiries recorded?</label><select name="enquiryRecording"><option value="none">Not consistently recorded</option><option value="manual">Notebook / spreadsheet / chat history</option><option value="structured">Central CRM / structured system</option></select></div>
+          <div><label>How are follow-ups managed?</label><select name="followUp"><option value="memory">Staff memory / manual reminders</option><option value="mixed">Spreadsheet / calendar / chat labels</option><option value="automated">CRM reminders / automated workflow</option></select></div>
+          <div><label>How are bookings or orders handled?</label><select name="orders"><option value="manual">Mostly calls / chats / manual confirmation</option><option value="partial">Online request, then manual confirmation</option><option value="digital">Structured online booking / order system</option><option value="na">Not applicable</option></select></div>
+        </div>
+      </div>
+
+      <div class="assessment-step" data-step="3">
+        <div class="step-head"><span class="mono">STEP 3 OF 5</span><h2>Operations</h2><p>Where does routine work become slow, repetitive or difficult to see?</p></div>
+        <div class="form-grid">
+          <div><label>How is customer information managed?</label><select name="customerData"><option value="scattered">Across phones, chats, spreadsheets or paper</option><option value="partial">Some structured files or systems</option><option value="crm">Central CRM / database</option></select></div>
+          <div><label>Inventory / operations software</label><select name="operationsSoftware"><option value="none">None</option><option value="basic">Spreadsheets / basic software</option><option value="system">Dedicated management system</option><option value="na">Not applicable</option></select></div>
+          <div><label>Accounting software</label><select name="accounting"><option value="none">None / mostly manual</option><option value="basic">Spreadsheet / basic app</option><option value="system">Dedicated accounting system</option></select></div>
+          <div><label>HR / payroll software</label><select name="hr"><option value="none">None / mostly manual</option><option value="basic">Spreadsheet / basic app</option><option value="system">Dedicated HR / payroll system</option><option value="na">Not applicable</option></select></div>
+        </div>
+        <label>Major repetitive administrative tasks</label><textarea name="repetitiveTasks" placeholder="Examples: answering repeated questions, preparing quotations, updating records, reminders, reporting, scheduling..."></textarea>
+        <label>Biggest operational bottleneck</label><textarea name="bottleneck" placeholder="What repeatedly slows the business down or creates avoidable errors?"></textarea>
+      </div>
+
+      <div class="assessment-step" data-step="4">
+        <div class="step-head"><span class="mono">STEP 4 OF 5</span><h2>Technology</h2><p>Good technology should connect the operation, not create another silo.</p></div>
+        <div class="form-grid">
+          <div><label>Do you use a CRM?</label><select name="crm"><option value="no">No</option><option value="light">Basic / partial</option><option value="yes">Yes, actively used</option></select></div>
+          <div><label>Are key systems connected?</label><select name="integrations"><option value="no">Mostly disconnected</option><option value="some">Some integrations</option><option value="yes">Mostly connected</option></select></div>
+          <div><label>Can management see current operational information easily?</label><select name="visibility"><option value="no">No / reporting is manual</option><option value="some">Partly</option><option value="yes">Yes, dashboards / reports are readily available</option></select></div>
+          <div><label>Does your website generate useful enquiries?</label><select name="websiteConversion"><option value="none">No website</option><option value="low">Website exists but generates few clear enquiries</option><option value="yes">Yes, it has clear conversion paths</option></select></div>
+        </div>
+        <label>Systems currently used</label><textarea name="systems" placeholder="List software, spreadsheets, WhatsApp processes or tools your team depends on."></textarea>
+      </div>
+
+      <div class="assessment-step" data-step="5">
+        <div class="step-head"><span class="mono">STEP 5 OF 5</span><h2>Growth</h2><p>What should improve next, and how can we reach you if you request a consultation?</p></div>
+        <div class="form-grid">
+          <div><label>Primary growth objective</label><select name="growthObjective"><option>Get more customers</option><option>Improve conversion</option><option>Reduce manual work</option><option>Improve customer experience</option><option>Improve operational control</option><option>Expand to more locations</option><option>Connect existing systems</option></select></div>
+          <div><label>Contact name *</label><input name="contactName" required></div>
+          <div><label>Phone / WhatsApp *</label><input name="phone" required placeholder="+234..."></div>
+          <div><label>Email</label><input type="email" name="email"></div>
+          <div><label>Preferred contact method</label><select name="preferredContact"><option>WhatsApp</option><option>Phone call</option><option>Email</option></select></div>
+        </div>
+        <label class="consent-check"><input type="checkbox" name="consent" required> I consent to Kadzoris using these details to provide this assessment and contact me about the digital opportunities I have identified.</label>
+      </div>
+
+      <div class="assessment-nav">
+        <button type="button" class="btn-secondary" id="assessmentPrev" disabled>← Back</button>
+        <button type="button" class="btn-primary" id="assessmentNext">Continue →</button>
+        <button type="submit" class="btn-primary" id="assessmentSubmit" style="display:none">See My Preliminary Result →</button>
+      </div>
+      <p id="assessmentStatus" class="assessment-status"></p>
+    </form>
+
+    <div id="digitalGapResult" class="assessment-result" hidden>
+      <div class="eyebrow">Preliminary result</div>
+      <h2>We identified potential opportunities in:</h2>
+      <p class="result-disclaimer">This is a transparent rule-based assessment, not an AI diagnosis. It highlights areas worth examining further.</p>
+      <div id="resultCategories" class="result-categories"></div>
+      <div class="result-next"><h3>Let's examine which opportunity could create the most value for your business.</h3><div class="ctas"><a href="contact.html#consult" class="btn-primary" data-track="consultation_clicked">Request a Digital Strategy Consultation →</a><a id="assessmentWhatsApp" href="https://wa.me/2347071594483" class="btn-secondary" data-track="whatsapp_clicked">WhatsApp Kadzoris</a></div></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><p>Kadzoris — AI-Powered Digital Solutions for Nigerian Businesses</p><div class="flinks"><a href="services.html">Solutions</a><a href="industries.html">Industries</a><a href="contact.html">Contact</a></div><p>© 2026 Kadzoris. All rights reserved.</p></div></footer>
+<a href="https://wa.me/2347071594483" class="wa-float" aria-label="WhatsApp Kadzoris" data-track="whatsapp_clicked">◆</a>
+<script src="script.js"></script>
+</body>
+</html>
