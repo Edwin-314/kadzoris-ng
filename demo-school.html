@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Greenhills Academy | Empowering Future Leaders</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .editorial-frame {
+            padding: 2rem;
+            position: relative;
+        }
+        .editorial-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 100%;
+            border: 1px solid #c5c6d2;
+            z-index: -1;
+            transform: translate(-10px, -10px);
+        }
+        .ambient-shadow {
+            box-shadow: 0 12px 40px rgba(0, 35, 102, 0.08);
+        }
+        .gold-border-button {
+            border-bottom: 1px solid #e9c176;
+        }
+        #mobileMenu{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+        #mobileMenu.open{max-height:400px;}
+    </style>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-primary-fixed": "#00174a",
+                "primary-fixed": "#dbe1ff",
+                "surface-container-low": "#f6f3f2",
+                "on-tertiary-fixed-variant": "#454748",
+                "secondary-container": "#fed488",
+                "error-container": "#ffdad6",
+                "on-primary": "#ffffff",
+                "on-secondary-container": "#785a1a",
+                "tertiary-container": "#26292a",
+                "secondary-fixed": "#ffdea5",
+                "on-surface-variant": "#444650",
+                "surface-variant": "#e5e2e1",
+                "outline": "#757682",
+                "on-secondary-fixed-variant": "#5d4201",
+                "secondary-fixed-dim": "#e9c176",
+                "tertiary-fixed": "#e1e3e4",
+                "primary-container": "#002366",
+                "background": "#fcf9f8",
+                "on-tertiary": "#ffffff",
+                "on-tertiary-fixed": "#191c1d",
+                "inverse-primary": "#b3c5ff",
+                "secondary": "#775a19",
+                "error": "#ba1a1a",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-high": "#eae7e7",
+                "on-primary-fixed-variant": "#2a4386",
+                "surface-dim": "#dcd9d9",
+                "surface-tint": "#435b9f",
+                "surface-bright": "#fcf9f8",
+                "primary-fixed-dim": "#b3c5ff",
+                "on-primary-container": "#758dd5",
+                "inverse-on-surface": "#f3f0ef",
+                "tertiary-fixed-dim": "#c5c7c8",
+                "outline-variant": "#c5c6d2",
+                "surface": "#fcf9f8",
+                "on-error-container": "#93000a",
+                "on-background": "#1c1b1b",
+                "surface-container": "#f0eded",
+                "inverse-surface": "#313030",
+                "on-secondary": "#ffffff",
+                "on-tertiary-container": "#8e9091",
+                "surface-container-highest": "#e5e2e1",
+                "primary": "#00113a",
+                "on-surface": "#1c1b1b",
+                "on-secondary-fixed": "#261900",
+                "tertiary": "#121516",
+                "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "stack-lg": "64px",
+                "stack-md": "32px",
+                "container-max": "1280px",
+                "stack-sm": "16px",
+                "margin-mobile": "20px",
+                "gutter": "24px",
+                "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                "headline-sm": ["Playfair Display"],
+                "body-md": ["Inter"],
+                "body-lg": ["Inter"],
+                "display-lg": ["Playfair Display"],
+                "headline-md": ["Playfair Display"],
+                "label-caps": ["Inter"],
+                "display-lg-mobile": ["Playfair Display"]
+            },
+            "fontSize": {
+                "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+
+<div class="bg-black text-white text-xs md:text-sm py-2 px-4 flex flex-col md:flex-row justify-between items-center gap-1">
+  <a href="demo.html" class="text-secondary-fixed-dim font-medium">← Back to Demos</a>
+  <span class="text-white/50">Sample project — illustrative demo, not an actual client</span>
+</div>
+
+<!-- Top Navigation Bar -->
+<header class="fixed top-8 md:top-9 w-full z-50 bg-surface/80 dark:bg-primary/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-300 ease-in-out">
+<nav class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">
+                Greenhills Academy
+            </div>
+<div class="hidden md:flex items-center space-x-8 font-body-md text-body-md">
+<a class="text-on-surface dark:text-on-primary-fixed-variant hover:text-secondary transition-colors" href="#about">About</a>
+<a class="text-on-surface dark:text-on-primary-fixed-variant hover:text-secondary transition-colors" href="#academics">Academics</a>
+<a class="text-on-surface dark:text-on-primary-fixed-variant hover:text-secondary transition-colors" href="#admissions">Admissions</a>
+<a class="text-on-surface dark:text-on-primary-fixed-variant hover:text-secondary transition-colors" href="#life">Life</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hidden lg:block text-primary dark:text-primary-fixed font-bold hover:text-secondary transition-all" title="For current families — not wired in this sample">Portal</button>
+<a href="https://wa.me/2347071594483?text=Hi%2C%20I%27d%20like%20to%20apply%20to%20Greenhills%20Academy." class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-bold hover:bg-primary/90 gold-border-button transition-all">Apply Now</a>
+<button class="md:hidden text-primary" id="mobileMenuToggle" aria-label="Toggle menu">
+<span class="material-symbols-outlined text-[32px]">menu</span>
+</button>
+</div>
+</nav>
+<div id="mobileMenu" class="md:hidden bg-white border-t border-outline-variant/30">
+<div class="flex flex-col px-margin-mobile py-4 gap-4">
+<a class="text-on-surface font-bold" href="#about">About</a>
+<a class="text-on-surface font-bold" href="#academics">Academics</a>
+<a class="text-on-surface font-bold" href="#admissions">Admissions</a>
+<a class="text-on-surface font-bold" href="#life">Life</a>
+<a href="https://wa.me/2347071594483?text=Hi%2C%20I%27d%20like%20to%20apply%20to%20Greenhills%20Academy." class="bg-primary text-on-primary px-6 py-3 rounded-lg font-bold text-center">Apply Now</a>
+</div>
+</div>
+</header>
+<main class="mt-28 md:mt-20">
+<!-- Hero Section -->
+<section class="relative h-[921px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-primary/40 mix-blend-multiply z-10"></div>
+<img class="w-full h-full object-cover" alt="Students in navy and gold school uniforms standing confidently in front of a modern school building" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC97uvobKkkhvKtfq5Jj-hpuj6QbbN9JZkHsc8AcqUpVbKQJDhVaAOsR-1cE_x9KdDK2eVLzjK3XuZNQNgi-nRx29J5iqlxkhCNfMb_hrf6g7ghdw1CHpErrr_Ob7nnNm0qveQgAdleR3TX7U6ao9rt8eVXkgOzA8HP0xRZLC5EW-l4IG6IDoAVLqo0GAjPWANnyf01yEXMKKKknEVpNXSjnUfVfDn73MaUxHgD589RX1lbxRoF1LLFE11DhtXmkXLOhM8U6PHzUXOf"/>
+</div>
+<div class="relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
+<div class="max-w-3xl">
+<span class="inline-block bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full font-label-caps text-label-caps mb-6">ADMISSIONS OPEN — NEW INTAKE</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6 md:leading-[1.1]">Empowering Future Leaders</h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-10 max-w-xl">Providing world-class education rooted in Nigerian heritage and global excellence. Join a community where every child's potential is unlocked.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold text-center gold-border-button hover:bg-primary/90 transition-all" href="https://wa.me/2347071594483?text=Hi%2C%20I%27d%20like%20to%20apply%20to%20Greenhills%20Academy%20for%20the%20new%20intake.">Apply for New Intake</a>
+<a class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 rounded-lg font-bold text-center hover:bg-white/20 transition-all" href="#about">Discover Our Story</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Story Section -->
+<section class="py-stack-lg bg-surface" id="about">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="editorial-frame">
+<img class="w-full h-[500px] object-cover shadow-lg" alt="Teacher guiding students through a collaborative classroom project using tablets and books" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfyTzHQKmlDZdybrAeJRo0zLhVUSsnAYNAJhMVBrUVYSnNXWCnCjletlFUDVBb9tTbqupPhig6GudFMLyT6fpihxtlMQXdxLG93zXtV4ZjhpIu77eF4zsGENHRWCg-cb1upDojJy5JuVmPu7iIB1yDQ8-QNi2Vj_f4gggxuaJuWGUudTq9JfFXfRQjs1rzoMjdupniOB3wYyHOIrz-dq8_OHxlzYiKmvc0ApCvkvuntGRvi63SaHSo9Ioxm0vUXwXxzrPUv1WoVszD"/>
+</div>
+</div>
+<div class="order-1 md:order-2 space-y-6">
+<h2 class="font-headline-md text-headline-md text-primary">A Legacy of Excellence, A Future of Innovation</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Greenhills Academy has stood as a beacon of academic prestige in Lagos. Our philosophy centers on holistic education—nurturing the mind, body, and spirit within a framework of Nigerian values and international standards.</p>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div>
+<h4 class="font-bold text-primary">Character &amp; Values</h4>
+<p class="text-on-surface-variant">Instilling integrity, respect, and responsibility in every student.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">public</span>
+<div>
+<h4 class="font-bold text-primary">Global Perspective</h4>
+<p class="text-on-surface-variant">A curriculum designed to prepare students for the world's best universities.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Academic Excellence Grid -->
+<section class="py-stack-lg bg-surface-container-low" id="academics">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Our Academic Path</h2>
+<div class="h-1 w-24 bg-secondary-fixed-dim mx-auto"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Creche -->
+<div class="bg-white p-10 border border-outline-variant/30 hover:border-secondary-fixed-dim transition-all hover:translate-y-[-8px] ambient-shadow">
+<div class="w-16 h-16 bg-secondary-container/20 rounded-full flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-secondary text-4xl">child_care</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Crèche &amp; Preschool</h3>
+<p class="text-on-surface-variant mb-6">A nurturing environment where curiosity is sparked and the foundations of lifelong learning are laid through play and exploration.</p>
+</div>
+<!-- Primary -->
+<div class="bg-white p-10 border border-outline-variant/30 hover:border-secondary-fixed-dim transition-all hover:translate-y-[-8px] ambient-shadow">
+<div class="w-16 h-16 bg-secondary-container/20 rounded-full flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-secondary text-4xl">school</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Primary Section</h3>
+<h4 class="text-label-caps font-label-caps text-secondary mb-2">GRADES 1 - 6</h4>
+<p class="text-on-surface-variant mb-6">A rigorous curriculum balanced with creative arts, physical education, and character development to build confident learners.</p>
+</div>
+<!-- Secondary -->
+<div class="bg-white p-10 border border-outline-variant/30 hover:border-secondary-fixed-dim transition-all hover:translate-y-[-8px] ambient-shadow">
+<div class="w-16 h-16 bg-secondary-container/20 rounded-full flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-secondary text-4xl">menu_book</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Secondary School</h3>
+<h4 class="text-label-caps font-label-caps text-secondary mb-2">GRADES 7 - 12</h4>
+<p class="text-on-surface-variant mb-6">Preparing students for WAEC, IGCSE, and A-Levels with a focus on critical thinking, leadership, and technological fluency.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Greenhills Section (Bento Grid Style) -->
+<section class="py-stack-lg bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-md text-headline-md text-primary mb-12 text-center">Why Families Choose Greenhills</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 bg-primary p-10 flex flex-col justify-between text-white overflow-hidden relative group">
+<div class="relative z-10">
+<h3 class="font-headline-sm text-headline-sm mb-4">21st-Century Facilities</h3>
+<p class="text-white/80">From robotics labs to Olympic-standard pools, we provide the tools for tomorrow.</p>
+</div>
+<span class="material-symbols-outlined text-8xl absolute -bottom-4 -right-4 text-white/5 group-hover:scale-110 transition-transform">domain</span>
+</div>
+<div class="md:col-span-1 bg-surface-container-high p-8 flex flex-col justify-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-4">psychology</span>
+<h4 class="font-bold text-primary text-xl mb-2">Expert Educators</h4>
+<p class="text-on-surface-variant text-sm">International and locally trained faculty dedicated to student success.</p>
+</div>
+<div class="md:col-span-1 bg-secondary-fixed p-8 flex flex-col justify-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-4">travel_explore</span>
+<h4 class="font-bold text-primary text-xl mb-2">Global Curriculum</h4>
+<p class="text-on-secondary-fixed-variant text-sm">Integrating British and Nigerian curricula for a competitive edge.</p>
+</div>
+<div class="md:col-span-1 bg-surface-container-low border border-outline-variant/30 p-8 flex flex-col justify-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-4">groups</span>
+<h4 class="font-bold text-primary text-xl mb-2">Small Class Sizes</h4>
+<p class="text-on-surface-variant text-sm">Ensuring personalized attention for every unique learner.</p>
+</div>
+<div class="md:col-span-3 h-64 relative overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Students collaborating on a robotics project in a modern school lab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlH8mHU5aylLOjsyVo9EIThcHtcbEsMR8ldoHKkq547JYXpHU91gdtVF9pYNMw8kZSka6W9IUH9GIrersswPZiKzmyMDbRspSOLUWkKTdKjGMG4rjXPsUv3lb7T-f9D6Sq0znbYx4YTIf8rLaWUHd69k1FVzJ3dlzbGcITjJvv0FO8ZnV79IiH4YlTg12hj_gZ-7o21CCqVRQYxYlyEwljy9aahj0U6X2b8PU4gyuThgWMZ0K44DMfx-Eo7BUDMeO-UIjld41zfVOG"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+<h4 class="text-white font-headline-sm">Innovation in Every Lesson</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Admissions Flow -->
+<section class="py-stack-lg bg-surface-container-lowest" id="admissions">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Admissions Process</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Your journey toward excellence begins here. Follow these simple steps to join the Greenhills family.</p>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 relative">
+<div class="hidden md:block absolute top-10 left-0 w-full h-[1px] bg-outline-variant/30 z-0"></div>
+<!-- Step 1 -->
+<div class="flex-1 text-center relative z-10">
+<div class="w-20 h-20 bg-primary text-white flex items-center justify-center mx-auto mb-6 ambient-shadow">
+<span class="font-headline-sm">01</span>
+</div>
+<h4 class="font-bold text-primary mb-2">Apply</h4>
+<p class="text-sm text-on-surface-variant">Complete the online application form with required documents.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex-1 text-center relative z-10">
+<div class="w-20 h-20 bg-white border border-primary text-primary flex items-center justify-center mx-auto mb-6 ambient-shadow">
+<span class="font-headline-sm">02</span>
+</div>
+<h4 class="font-bold text-primary mb-2">Entrance Exam</h4>
+<p class="text-sm text-on-surface-variant">Scheduled assessment to evaluate core academic competencies.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex-1 text-center relative z-10">
+<div class="w-20 h-20 bg-white border border-primary text-primary flex items-center justify-center mx-auto mb-6 ambient-shadow">
+<span class="font-headline-sm">03</span>
+</div>
+<h4 class="font-bold text-primary mb-2">Interview</h4>
+<p class="text-sm text-on-surface-variant">A friendly interaction with our admissions team and faculty.</p>
+</div>
+<!-- Step 4 -->
+<div class="flex-1 text-center relative z-10">
+<div class="w-20 h-20 bg-secondary-fixed text-primary flex items-center justify-center mx-auto mb-6 ambient-shadow">
+<span class="font-headline-sm">04</span>
+</div>
+<h4 class="font-bold text-primary mb-2">Enrollment</h4>
+<p class="text-sm text-on-surface-variant">Confirmation of admission and official onboarding process.</p>
+</div>
+</div>
+<div class="mt-16 text-center">
+<a href="https://wa.me/2347071594483?text=Hi%2C%20I%27d%20like%20to%20start%20my%20application%20to%20Greenhills%20Academy." class="inline-block bg-primary text-on-primary px-12 py-4 rounded-lg font-bold text-lg hover:bg-primary/90 gold-border-button transition-all">Start Your Application</a>
+</div>
+</div>
+</section>
+<!-- School Life Masonry -->
+<section class="py-stack-lg bg-surface" id="life">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Life at Greenhills</h2>
+<p class="text-on-surface-variant">More than just academics—we cultivate passions.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+<div class="col-span-2 row-span-2 relative overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" alt="Students in colorful traditional Nigerian attire performing a cultural dance on stage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAG25Gvs9sQcINQ06uDMxbbudYaw0nM68Ti9fGO1lsz1943NIvlctU5hOtl5nZqeGYhHsjfOjzE18p-4Swh5vbGjweZJV80JgFQpBgX0adDSHOW9D_d_69pENEW_H2inyjXZeUYQZPTMxoTKxTbVVR1AFryO_QeYkhyrwev3bIa1kg-qNo7UJKvnzfvuOE9h2g6GIQtiOSoJcTIaO-BQo_rIxDNteYmSBFZYLbqzeoaRX8z1Rum1X4Sfpl0ihCJVcOojjBmpo8LMs8"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<div class="col-span-1 row-span-1 relative overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" alt="Student dribbling a football on a school sports field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8levYIgL_Z1RXUWs7y-IfBYpmtWnTfnMTkkOvT4tTsH5RDjeYefIpBPzE2bQ6FozrIhF2jk7a44zKJ1qc8ZyYxXPA8MeJMrgEN9Sa2sySsqzCPMarCAUL8CHToz2kGa56IhKRFEwSGP8MDxujPBFzJO1ZCjsxVCZnqg3G_Nn2dbacM_gqCnkvXejwAGxjDSYU_uLku3GX6vaLzdY5L5oyyHPJBT_gLnc54mOqSMkpJ6NEpTm-XST2VTlYC7aXGIt9XUqc6umOCsNs"/>
+</div>
+<div class="col-span-1 row-span-2 relative overflow-hidden group">
+<img alt="Student playing a grand piano in a sunlit music room" class="w-full h-full object-cover transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_Mks9eph4qhf6Yi9pGozCi_y7HKgvlj17WC-AG_XMVhfzVZvTBtQB2fqPc-mmg1jeIMq4yKmCOX-1Wjtbnn-koW3Am9YyImzpDnYD4SRrW7on-XT4agNAnpS144woYyptKHmzNnR-Aryt4QKyzAQgh17-P4Dj1yu2uhq3212o2Wr5cSH9uiufAbF_19i8DXJLXuqeHbIE2w9lhuerYv_atGfjwCJoYhGawW0izI0HlSYf4qBdl6eSqrG7H-3KVfkdPluvYicStfI9"/>
+</div>
+<div class="col-span-1 row-span-1 relative overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" alt="Students sharing a book in a colorful, modern school library" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHHWqZpGiNpyPIhR-NJbd1wB74Gc9MOwLpulYOSrR3CuF7VPv3D534bD_Fre2kz5lr_Lwg2jElVlVrKSBTwptxNz2P0zHg_I9Ct7Cb_5d7VOAGregkyvN_mUjTwOTTgq4xpqhW2nytixh_xL1IKXF6BLnTHadEJQ_jGYf8XYcyGvT1G5Q_-iCKVnhBC-LAeYYTEQlTF20pyWSfZ9Pk2jh177n6II4s-jfHefdtJ9y8FUndHYlwkjk6uVFDEdHqUnD4TmxGR4N2Gj6a"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-stack-lg bg-primary-container relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10">
+<span class="material-symbols-outlined text-[400px] text-white">format_quote</span>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="max-w-4xl mx-auto">
+<div class="relative">
+<div class="text-center text-white space-y-8">
+<span class="material-symbols-outlined text-secondary text-5xl">format_quote</span>
+<span class="block text-xs uppercase tracking-widest text-white/50">Illustrative sample quote for demonstration purposes</span>
+<h3 class="font-headline-md text-headline-md italic leading-snug">"Greenhills Academy hasn't just educated my children; it has transformed them into confident, thoughtful leaders. The balance of local values and global exposure is unmatched in Lagos."</h3>
+<div class="flex items-center justify-center gap-4">
+<img class="w-16 h-16 rounded-full object-cover border-2 border-secondary" alt="Sample parent testimonial headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuColwpATYkxSHjpXG69H-_IX7gHp5K1a7fQLSa1IEcNzJZTATrJKSAIVO6g3KMNBGXZL9MzyHBOETuIr-Nyf3yM6Vuld1b2kxBZe9DlXYk59Ji5_ztgdzKJddraJ2v4GTgUn6yrOm83z0nHrc72L7JH4X4Lt6VeKCccooTplbAxESfu9bsLnSKUIK5spgzPPkkZP3VYK_08TMTFE5Weijk4g-xDAyCOyXtZFwJrbmwb46RgwdrBdLNZj7qof4MtfrV76qkgmW-1VRQz"/>
+<div class="text-left">
+<p class="font-bold text-lg">Sample Parent</p>
+<p class="text-white/60 text-sm">Guardian, Greenhills Academy</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section class="py-stack-lg bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Visit Our Campus</h2>
+<p class="text-on-surface-variant">Located in the heart of Lekki, our campus provides a serene and secure environment for learning.</p>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<div>
+<h4 class="font-bold text-primary">Address</h4>
+<p class="text-on-surface-variant">Plot 12, Greenhills Way, Lekki Phase 1, Lagos, Nigeria</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">call</span>
+<div>
+<h4 class="font-bold text-primary">Contact</h4>
+<p class="text-on-surface-variant">+234 (0) 707 159 4483<br/>hello@kadzoris.ng</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">schedule</span>
+<div>
+<h4 class="font-bold text-primary">Visiting Hours</h4>
+<p class="text-on-surface-variant">Mon - Fri: 8:00 AM - 4:00 PM</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h-[450px] bg-surface-container-high relative rounded-lg overflow-hidden border border-outline-variant/30 ambient-shadow">
+<img class="w-full h-full object-cover" alt="Map showing Lekki Phase 1, Lagos, with a marker for the school location" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBmyExoss4AsFfjwnS-jy-bXabuYxBsQ6mqp0Rx_im2vGLEKq57ROb1DM7Utg3riX_tUGzpYl_bcFRew904e_Pk8PbBO8KQe9Nrs61U9FBZZwvcEHDH3rxfMMpGqWo5f-cTneNQVByrOGjwlrhlsWxOl3tK5XmM4uOIdmIkTnYCIOJUQZvMHGqCmAo00VzOls3Je_Q6sw7TJDHbcRL5zasX_bFqghiOMzprvH0HIYVaxlAhXf4usHaYY0lK7UKDoYEoq_L9OLQEY5r"/>
+<div class="absolute top-4 left-4 bg-white p-4 ambient-shadow border border-outline-variant/30">
+<p class="text-xs font-bold text-primary flex items-center gap-2">
+<span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+                            GREENHILLS ACADEMY CAMPUS
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-tertiary-container w-full border-t border-primary-container">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row justify-between">
+<div class="mb-12 md:mb-0 space-y-6 max-w-sm">
+<div class="font-headline-md text-headline-md text-primary-fixed">Greenhills Academy</div>
+<p class="text-primary-fixed/80 font-body-md text-body-md">Empowering the next generation of African leaders through excellence in education and a commitment to global innovation.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+<div class="space-y-4">
+<h5 class="text-secondary-fixed font-bold">Quick Links</h5>
+<ul class="space-y-2 font-body-md text-body-md">
+<li><a class="text-primary-fixed/80 hover:text-primary-fixed hover:translate-x-1 transition-transform inline-block" href="#admissions">Admissions</a></li>
+<li><a class="text-primary-fixed/80 hover:text-primary-fixed hover:translate-x-1 transition-transform inline-block" href="#academics">Academics</a></li>
+<li><a class="text-primary-fixed/80 hover:text-primary-fixed hover:translate-x-1 transition-transform inline-block" href="#life">School Life</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-secondary-fixed font-bold">Kadzoris</h5>
+<ul class="space-y-2 font-body-md text-body-md">
+<li><a class="text-primary-fixed/80 hover:text-primary-fixed hover:translate-x-1 transition-transform inline-block" href="demo.html">← Back to Demos</a></li>
+<li><a class="text-primary-fixed/80 hover:text-primary-fixed hover:translate-x-1 transition-transform inline-block" href="index.html">Want a site like this? Apply free →</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-white/10 text-center md:text-left">
+<p class="text-primary-fixed/60 text-sm font-body-md text-body-md">Greenhills Academy — a sample site built on the Kadzoris platform. © 2026.</p>
+</div>
+</footer>
+<script>
+        // Smooth scroll interaction for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+            mobileMenu.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+            });
+        }
+
+        // Simple entrance animation for sections
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('main > section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
