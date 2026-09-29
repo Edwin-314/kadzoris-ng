@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Your Website Customized — Kadzoris</title>
+<link rel="icon" type="image/jpeg" href="https://6a95c2fa3a1c560008b2f7f9--kadzoris.netlify.app/logo.jpg">
+<link rel="stylesheet" href="style.css">
+<style>
+  .form-wrap{max-width:760px;margin:0 auto;padding:0 32px;}
+  .onb-section{border:1px solid var(--line);border-radius:16px;padding:36px;margin-bottom:24px;background:var(--ink-2);}
+  .onb-section h2{font-size:1.3rem;margin-bottom:6px;}
+  .onb-section .sub{color:var(--ash);font-size:0.88rem;margin-bottom:24px;}
+  .onb-step{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--brass-bright);
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;display:block;}
+  label{display:block;font-size:0.85rem;color:var(--ash);margin-bottom:6px;margin-top:16px;}
+  label:first-of-type{margin-top:0;}
+  label .req{color:var(--brass-bright);}
+  label .opt{color:var(--ash);font-style:italic;font-weight:400;}
+  input,select,textarea{width:100%;background:var(--ink);border:1px solid var(--line);color:var(--paper);
+    border-radius:8px;padding:12px 14px;font-family:'Inter',sans-serif;font-size:0.92rem;}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brass);}
+  textarea{resize:vertical;min-height:80px;}
+  .repeat-group{border:1px dashed var(--line);border-radius:10px;padding:20px;margin-top:16px;}
+  .repeat-group + .repeat-group{margin-top:12px;}
+  .repeat-label{font-size:0.8rem;color:var(--brass-bright);font-weight:600;margin-bottom:12px;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:600px){.row2{grid-template-columns:1fr;}}
+  .hint{font-size:0.78rem;color:var(--ash);margin-top:6px;line-height:1.5;}
+  .submit-row{display:flex;justify-content:center;margin-top:12px;}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <img src="https://6a95c2fa3a1c560008b2f7f9--kadzoris.netlify.app/logo.jpg" alt="Kadzoris logo" style="height:38px;width:38px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+      <span class="brand" style="margin:0;">Kadzoris<span>.</span></span>
+    </a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="demo.html">Demo</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">You're approved 🎉</div>
+    <h1>Let's build your site.</h1>
+    <p>This form tells us exactly what to put where — your business name, your services, your photos, your contact details. Takes about 10–15 minutes. The more complete this is, the closer your first draft will be to done.</p>
+  </div>
+</section>
+
+<section style="padding-top:60px;">
+  <div class="form-wrap">
+    <form id="onboardingForm" onsubmit="return false;">
+
+      <div class="onb-section">
+        <span class="onb-step">Step 1</span>
+        <h2>Business Identity</h2>
+        <div class="sub">The basics — what you're called and what you do.</div>
+        <label>Business / Organization Name <span class="req">*</span></label>
+        <input type="text" name="businessName" required>
+        <label>Industry <span class="req">*</span></label>
+        <select name="industry" required>
+          <option value="">Select one</option>
+          <option>School</option><option>Hospital / Clinic</option><option>Hotel</option>
+          <option>Restaurant</option><option>Church</option><option>Mosque</option><option>NGO</option>
+          <option>Law Firm</option><option>Real Estate</option><option>Construction</option>
+          <option>Logistics</option><option>Manufacturing</option><option>Retail / Boutique</option>
+          <option>Salon</option><option>Farm / Agriculture</option><option>Professional Services</option>
+          <option>Other</option>
+        </select>
+        <label>One-line description of what you do <span class="req">*</span></label>
+        <input type="text" name="tagline" placeholder="e.g. Trusted maternity and family care in Kaduna">
+        <label>Preferred domain name <span class="opt">(optional — we can suggest one)</span></label>
+        <input type="text" name="domainPreference" placeholder="e.g. yourbusinessname.com.ng">
+      </div>
+
+      <div class="onb-section">
+        <span class="onb-step">Step 2</span>
+        <h2>Brand Assets</h2>
+        <div class="sub">Send these directly on WhatsApp after submitting — don't attach files here.</div>
+        <label>Do you have a logo? <span class="req">*</span></label>
+        <select name="hasLogo">
+          <option>Yes — I'll send it on WhatsApp</option>
+          <option>No — please design one for me</option>
+        </select>
+        <label>Preferred brand colors <span class="opt">(optional)</span></label>
+        <input type="text" name="brandColors" placeholder="e.g. navy blue and gold, or 'surprise me'">
+        <div class="hint">Once you submit this form, send your logo and any photos to our WhatsApp — we'll match them to your submission using your business name.</div>
+      </div>
+
+      <div class="onb-section">
+        <span class="onb-step">Step 3</span>
+        <h2>Hero Section</h2>
+        <div class="sub">The first thing visitors see at the top of your site.</div>
+        <label>Main headline <span class="req">*</span></label>
+        <input type="text" name="heroHeadline" placeholder="e.g. Compassionate Care, Modern Systems">
+        <label>Supporting sentence <span class="opt">(1–2 sentences)</span></label>
+        <textarea name="heroSubtext" placeholder="What should visitors know within 5 seconds of landing on your site?"></textarea>
+        <label>Main button text <span class="req">*</span></label>
+        <input type="text" name="ctaLabel" placeholder="e.g. Book Appointment / Apply Now / Reserve a Room / Get a Quote">
+        <label>What should that button actually do? <span class="req">*</span></label>
+        <select name="ctaAction">
+          <option>Open WhatsApp chat</option>
+          <option>Scroll to a contact/booking form on the page</option>
+          <option>Call my phone number directly</option>
+          <option>Link to an existing booking system I already use</option>
+        </select>
+      </div>
+
+      <div class="onb-section">
+        <span class="onb-step">Step 4</span>
+        <h2>Your Story</h2>
+        <div class="sub">A short "About" section — why customers should trust you.</div>
+        <label>How did this business start, or what's your mission? <span class="req">*</span></label>
+        <textarea name="aboutStory" placeholder="A few sentences — we'll polish the writing, just give us the facts."></textarea>
+        <label>What makes you different from others in your area? <span class="opt">(3–4 short points)</span></label>
+        <textarea name="differentiators" placeholder="e.g. 24/7 availability, 10 years in business, only certified specialists in the region..."></textarea>
+      </div>
+
+      <div class="onb-section">
+        <span class="onb-step">Step 5</span>
+        <h2>Services / Programs / Offerings</h2>
+        <div class="sub">List up to 6 of your main services. These become cards on your site.</div>
+        <div class="repeat-group">
+          <div class="repeat-label">Service / Program 1</div>
+          <div class="row2">
+            <div><label>Name <span class="req">*</span></label><input type="text" name="service1_name"></div>
+            <div><label>Short description</label><input type="text" name="service1_desc"></div>
+          </div>
+        </div>
+        <div class="repeat-group">
+          <div class="repeat-label">Service / Program 2</div>
+          <div class="row2">
+            <div><label>Name</label><input type="text" name="service2_name"></div>
+            <div><label>Short description</label><input type="text" name="service2_desc"></div>
+          </div>
+        </div>
+        <div class="repeat-group">
+          <div class="repeat-label">Service / Program 3</div>
+          <div class="row2">
+            <div><label>Name</label><input type="text" name="service3_name"></div>
+            <div><label>Short description</label><input type="text" name="service3_desc"></div>
+          </div>
+        </div>
+        <div class="repeat-group">
+          <div class="repeat-label">Service / Program 4 <span class="opt">(optional)</span></div>
+          <div class="row2">
+            <div><label>Name</label><input type="text" name="service4_name"></div>
+            <div><label>Short description</label><input type="text" name="service4_desc"></div>
+          </div>
+        </div>
+        <div class="hint">Need more than 4? Mention the rest in the notes field at the end.</div>
+      </div>
+
+      <div class="onb-section">
+        <span class="onb-step">Step 6</span>
+        <h2>Team / Rooms / Key People <span class="opt">(if relevant to your business)</span></h2>
+        <div class="sub">Doctors, teachers, room types, staff bios — whatever applies to you. Skip if not needed.</div>
+        <div class="repeat-group">
+          <div class="repeat-label">Entry 1</div>
+          <div class="row2">
+            <div><label>Name / Title</label><input type="text" name="team1_name"></div>
+            <div><label>Role / Category</label><input type="text" name="team1_role"></div>
+          </div>
+          <label>Short bio / description</label>
+          <input type="text" name="team1_desc">
+        </div>
+        <div class="repeat-group">
+          <div class="repeat-label">Entry 2 <span class="opt">(optional)</span></div>
+          <div class="row2">
+            <div><label>Name / Title</label><input type="text" name="team2_name"></div>
+            <div><label>Role / Category</label><input type="text" name="team2_role"></div>
+          </div>
+          <label>Short bio / description</label>
+          <input type="text" name="team2_desc">
+        </div>
+      </div>
+
+      <div class="onb-section">
+        <span class="onb-step">Step 7</span>
+        <h2>Photos</h2>
+        <div class="sub">Real photos make a huge difference — don't skip this if you can help it.</div>
+        <label>How many photos can you provide? <span class="req">*</span></label>
+        <select name="photoCount">
+          <option>1–3 photos</option>
+          <option>4–6 photos</option>
+          <option>7 or more photos</option>
+          <option>None — please suggest generic images</option>
+        </select>
+        <div class="hint">Send photos directly to our WhatsApp after submitting this form. Good photos to include: your building/entrance, your team at work, your products or facilities, and any signage with your business name visible.</div>
+      </div>
+
+      <div class="onb-section">
+        <span class="onb-step">Step 8</span>
+        <h2>Testimonials <span class="opt">(optional, but powerful)</span></h2>
+        <div class="sub">Real quotes from real customers build trust fast. Only include people who've agreed to be quoted.</div>
+        <label>Quote 1</label>
+        <textarea name="testimonial1_quote" placeholder="What did they say about you?"></textarea>
+        <label>Name and role of that person <span class="opt">(e.g. "Amina B., Parent")</span></label>
+        <input type="text" name="testimonial1_who">
+      </div>
+
+      <div class="onb-section">
+        <span class="onb-step">Step 9</span>
+        <h2>Location &amp; Contact</h2>
+        <div class="sub">How customers actually reach you.</div>
+        <label>Full Address <span class="req">*</span></label>
+        <input type="text" name="address" required>
+        <div class="row2">
+          <div><label>Phone Number <span class="req">*</span></label><input type="tel" name="phone" required></div>
+          <div><label>WhatsApp Number <span class="opt">(if different)</span></label><input type="tel" name="whatsapp"></div>
+        </div>
+        <div class="row2">
+          <div><label>Email Address</label><input type="email" name="email"></div>
+          <div><label>Opening Hours</label><input type="text" name="hours" placeholder="e.g. Mon–Sat, 8am–6pm"></div>
+        </div>
+        <label>Social media links <span class="opt">(optional)</span></label>
+        <input type="text" name="socials" placeholder="Instagram, Facebook, etc.">
+      </div>
+
+      <div class="onb-section">
+        <span class="onb-step">Step 10</span>
+        <h2>Anything Else?</h2>
+        <label>Notes, special requests, or extra services we didn't ask about</label>
+        <textarea name="extraNotes"></textarea>
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" class="btn-primary" style="border:none;cursor:pointer;" onclick="handleOnboardingSubmit(event)">Submit My Details →</button>
+      </div>
+      <p id="onboardingStatus" style="margin-top:14px;font-size:0.88rem;text-align:center;min-height:1.2em;"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Kadzoris — AI-Powered Digital Solutions for Nigerian Businesses</p>
+    <p>© 2026 Kadzoris. All rights reserved.</p>
+  </div>
+</footer>
+<a href="https://wa.me/2347071594483" class="wa-float" aria-label="WhatsApp Kadzoris" data-track="whatsapp_clicked">◆</a>
+
+<script>
+// Reuses the same n8n webhook pattern as the main Apply form.
+// TODO (Edwin): point this at a webhook URL for a SEPARATE n8n workflow
+// (e.g. "kadzoris-onboarding") so onboarding submissions don't mix with
+// new applications in your inbox — easier to triage.
+const ONBOARDING_WEBHOOK_URL = "https://YOUR-N8N-DOMAIN/webhook/kadzoris-onboarding";
+
+async function handleOnboardingSubmit(event) {
+  event.preventDefault();
+  const form = document.getElementById('onboardingForm');
+  const statusEl = document.getElementById('onboardingStatus');
+  const formData = new FormData(form);
+  const payload = {};
+  formData.forEach((value, key) => { payload[key] = value; });
+  payload.submittedAt = new Date().toISOString();
+  payload.source = "kadzoris.ng/onboarding";
+
+  if (!payload.businessName || !payload.industry || !payload.phone || !payload.address) {
+    statusEl.textContent = "Please fill in at least your business name, industry, phone, and address.";
+    statusEl.style.color = "#C97A3B";
+    return;
+  }
+
+  statusEl.textContent = "Submitting your details...";
+  statusEl.style.color = "var(--ash)";
+
+  try {
+    const res = await fetch(ONBOARDING_WEBHOOK_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) throw new Error("Webhook error");
+    statusEl.textContent = "✓ Received! Now send your logo and photos to our WhatsApp so we can start building.";
+    statusEl.style.color = "#3E9E6E";
+    form.reset();
+  } catch (err) {
+    statusEl.textContent = "Something went wrong submitting this. Please try again, or send your details directly on WhatsApp.";
+    statusEl.style.color = "#C0453B";
+  }
+}
+</script>
+</body>
+</html>
